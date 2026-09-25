@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-label="Fotografie bude doplněna">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1c22"/>
+      <stop offset="100%" stop-color="#0b0c0f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <g opacity="0.35" stroke="#e11d2e" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M300 500 L340 420 Q360 390 400 388 L780 388 Q820 390 840 420 L880 500 Q900 505 900 530 L900 560 Q900 575 885 575 L840 575 Q835 605 805 605 Q775 605 770 575 L430 575 Q425 605 395 605 Q365 605 360 575 L315 575 Q300 575 300 560 L300 530 Q300 505 300 500 Z"/>
+    <circle cx="395" cy="575" r="35"/>
+    <circle cx="805" cy="575" r="35"/>
+    <path d="M355 420 L370 500 L830 500 L845 420"/>
+  </g>
+  <text x="600" y="700" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#6b7280" letter-spacing="1">Fotografie doplníme</text>
+</svg>
