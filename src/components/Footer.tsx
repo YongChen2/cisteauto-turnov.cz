@@ -16,6 +16,10 @@ export default function Footer() {
           ·{" "}
           <a href={site.emailHref} className="hover:text-[var(--accent-text)]">
             {site.email}
+          </a>{" "}
+          ·{" "}
+          <a href="/ochrana-osobnich-udaju" className="hover:text-[var(--accent-text)]">
+            Ochrana osobních údajů
           </a>
         </p>
       </div>

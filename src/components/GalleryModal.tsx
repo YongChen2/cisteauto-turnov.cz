@@ -175,17 +175,21 @@ export default function GalleryModal({ service, onClose }: GalleryModalProps) {
         )}
 
         <div className="mt-5 flex flex-wrap justify-center gap-3">
+          <button
+            type="button"
+            onClick={() => {
+              window.dispatchEvent(new CustomEvent("contact:prefill", { detail: service.slug }));
+              onClose();
+            }}
+            className="rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-semibold text-white transition hover:brightness-110 cursor-pointer"
+          >
+            Objednat / zeptat se
+          </button>
           <a
             href={site.phoneHref}
-            className="rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-semibold text-white transition hover:brightness-110"
-          >
-            Objednat telefonicky
-          </a>
-          <a
-            href={`${site.emailHref}?subject=${encodeURIComponent(`Poptávka: ${service.name}`)}`}
             className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/5"
           >
-            Zeptat se e-mailem
+            Rovnou zavolat
           </a>
         </div>
       </div>
