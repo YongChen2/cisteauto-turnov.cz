@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import type { Service } from "@/data/services";
+import { site } from "@/data/site";
 
 type GalleryModalProps = {
   service: Service;
@@ -110,15 +111,25 @@ export default function GalleryModal({ service, onClose }: GalleryModalProps) {
           </button>
         </div>
 
-        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-neutral-900">
-          <Image
-            src={photos[index]}
-            alt={`${service.name} — fotografie ${index + 1} z ${photos.length}`}
-            fill
-            sizes="(max-width: 768px) 100vw, 768px"
-            className="object-contain"
-            priority
-          />
+        <div className="relative flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-xl bg-neutral-900">
+          {photos[index].natural ? (
+            <Image
+              src={photos[index].src}
+              alt={`${service.name} — fotografie ${index + 1} z ${photos.length}`}
+              width={photos[index].natural.width}
+              height={photos[index].natural.height}
+              className="max-w-none"
+            />
+          ) : (
+            <Image
+              src={photos[index].src}
+              alt={`${service.name} — fotografie ${index + 1} z ${photos.length}`}
+              fill
+              sizes="(max-width: 768px) 100vw, 768px"
+              className="object-contain"
+              priority
+            />
+          )}
 
           {hasMultiple && (
             <>
@@ -150,7 +161,7 @@ export default function GalleryModal({ service, onClose }: GalleryModalProps) {
           <div className="mt-3 flex items-center justify-center gap-2">
             {photos.map((photo, i) => (
               <button
-                key={photo + i}
+                key={photo.src + i}
                 type="button"
                 onClick={() => setIndex(i)}
                 aria-label={`Zobrazit fotografii ${i + 1}`}
@@ -162,6 +173,21 @@ export default function GalleryModal({ service, onClose }: GalleryModalProps) {
             ))}
           </div>
         )}
+
+        <div className="mt-5 flex flex-wrap justify-center gap-3">
+          <a
+            href={site.phoneHref}
+            className="rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-semibold text-white transition hover:brightness-110"
+          >
+            Objednat telefonicky
+          </a>
+          <a
+            href={`${site.emailHref}?subject=${encodeURIComponent(`Poptávka: ${service.name}`)}`}
+            className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/5"
+          >
+            Zeptat se e-mailem
+          </a>
+        </div>
       </div>
     </div>
   );

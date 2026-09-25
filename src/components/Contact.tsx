@@ -17,13 +17,13 @@ export default function Contact() {
             </div>
             <div>
               <p className="text-sm font-medium uppercase tracking-wide text-white/40">Telefon</p>
-              <a href={site.phoneHref} className="mt-1 block text-lg text-white hover:text-[var(--accent)]">
+              <a href={site.phoneHref} className="mt-1 block text-lg text-white hover:text-[var(--accent-text)]">
                 {site.phone}
               </a>
             </div>
             <div>
               <p className="text-sm font-medium uppercase tracking-wide text-white/40">E-mail</p>
-              <a href={site.emailHref} className="mt-1 block text-lg text-white hover:text-[var(--accent)]">
+              <a href={site.emailHref} className="mt-1 block text-lg text-white hover:text-[var(--accent-text)]">
                 {site.email}
               </a>
             </div>
@@ -54,6 +54,18 @@ export default function Contact() {
               referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
+        </div>
+
+        <div className="mt-10 flex flex-col items-center justify-between gap-3 rounded-2xl border border-[var(--accent)]/30 bg-[var(--accent)]/10 px-6 py-5 text-center sm:flex-row sm:text-left">
+          <p className="text-sm text-white/80">
+            Hledáte dárek? Nabízíme i dárkové poukazy na naše služby — vhodné k narozeninám i svátku.
+          </p>
+          <a
+            href={`${site.emailHref}?subject=${encodeURIComponent("Dárkový poukaz")}`}
+            className="whitespace-nowrap rounded-full border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/5"
+          >
+            Mám zájem o poukaz
+          </a>
         </div>
       </div>
     </section>

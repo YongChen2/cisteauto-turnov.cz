@@ -15,9 +15,10 @@ export default function ServiceCard({ service, onOpen }: ServiceCardProps) {
     >
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-neutral-900">
         <Image
-          src={service.photos[0]}
+          src={service.cover.src}
           alt={service.name}
           fill
+          loading="lazy"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
           className="object-cover transition duration-500 group-hover:scale-105"
         />
@@ -25,7 +26,7 @@ export default function ServiceCard({ service, onOpen }: ServiceCardProps) {
       <div className="flex flex-1 flex-col gap-2 p-5">
         <h3 className="text-lg font-semibold text-white">{service.name}</h3>
         <p className="text-sm leading-relaxed text-white/60">{service.shortDescription}</p>
-        <span className="mt-auto pt-3 text-sm font-medium text-[var(--accent)]">{service.price}</span>
+        <span className="mt-auto pt-3 text-sm font-medium text-[var(--accent-text)]">{service.price}</span>
       </div>
     </button>
   );

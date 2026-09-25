@@ -10,11 +10,11 @@ export default function Footer() {
           © {year} {site.name} — {site.owner}
         </p>
         <p>
-          <a href={site.phoneHref} className="hover:text-[var(--accent)]">
+          <a href={site.phoneHref} className="hover:text-[var(--accent-text)]">
             {site.phone}
           </a>{" "}
           ·{" "}
-          <a href={site.emailHref} className="hover:text-[var(--accent)]">
+          <a href={site.emailHref} className="hover:text-[var(--accent-text)]">
             {site.email}
           </a>
         </p>
