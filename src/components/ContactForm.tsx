@@ -1,25 +1,37 @@
 "use client";
 
-import { useActionState, useEffect, useRef, useState } from "react";
-import { submitContact, type ContactActionState } from "@/app/actions/contact";
-import { contactSchema, parseContactFormData, serviceOptions } from "@/lib/contact-schema";
+import { useEffect, useRef, useState } from "react";
+import {
+  contactSchema,
+  parseContactFormData,
+  serviceOptions,
+  type ContactFormValues,
+} from "@/lib/contact-schema";
+import { site } from "@/data/site";
 
-const initialState: ContactActionState = { status: "idle" };
+type FormStatus = "idle" | "submitting" | "success" | "error";
+type FieldErrors = Partial<Record<keyof ContactFormValues, string>>;
+
+const FORMSUBMIT_ENDPOINT = `https://formsubmit.co/ajax/${site.email}`;
+const MIN_FILL_TIME_MS = 3000;
+const SUCCESS_MESSAGE = "Děkujeme, ozveme se vám co nejdříve.";
+const ERROR_MESSAGE = `Odeslání se nezdařilo, zavolejte nám prosím na ${site.phone}.`;
 
 export default function ContactForm() {
-  const [state, formAction, isPending] = useActionState(submitContact, initialState);
-  const [clientErrors, setClientErrors] = useState<ContactActionState["errors"]>();
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [statusMessage, setStatusMessage] = useState("");
+  const [errors, setErrors] = useState<FieldErrors>({});
   const [formKey, setFormKey] = useState(0);
   const [selectedService, setSelectedService] = useState("");
   const formRef = useRef<HTMLFormElement>(null);
   const nameInputRef = useRef<HTMLInputElement>(null);
+  const isPending = status === "submitting";
 
   // Anti-spam timer: must sync with the real (client) clock, which only
   // exists after mount — a legitimate external-system effect.
-  const [startedAt, setStartedAt] = useState<number>(0);
+  const startedAtRef = useRef(0);
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setStartedAt(Date.now());
+    startedAtRef.current = Date.now();
   }, [formKey]);
 
   // Deep-link prefill (?sluzba=slug) — read directly from the browser URL
@@ -47,37 +59,84 @@ export default function ContactForm() {
     return () => window.removeEventListener("contact:prefill", handlePrefill);
   }, []);
 
-  useEffect(() => {
-    if (state.status === "success") {
-      // Remount the (uncontrolled) form to clear it and re-arm the timer —
-      // a genuine reaction to the server action's result, not derived state.
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setFormKey((k) => k + 1);
-      setSelectedService("");
-      setClientErrors(undefined);
-    }
-  }, [state]);
+  const succeed = () => {
+    // Remount the (uncontrolled) form to clear it and re-arm the timer.
+    setFormKey((k) => k + 1);
+    setSelectedService("");
+    setErrors({});
+    setStatus("success");
+    setStatusMessage(SUCCESS_MESSAGE);
+  };
 
-  const errors = clientErrors ?? state.errors ?? {};
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (isPending) return;
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     const formData = new FormData(e.currentTarget);
-    const values = parseContactFormData(formData);
-    const result = contactSchema.safeParse(values);
+    const honeypot = String(formData.get("_honey") ?? "");
+    const elapsed = Date.now() - startedAtRef.current;
 
+    const result = contactSchema.safeParse(parseContactFormData(formData));
     if (!result.success) {
-      e.preventDefault();
-      const nextErrors: ContactActionState["errors"] = {};
+      const nextErrors: FieldErrors = {};
       for (const issue of result.error.issues) {
         const field = issue.path[0];
         if (typeof field === "string" && !(field in nextErrors)) {
-          nextErrors[field as keyof typeof nextErrors] = issue.message;
+          nextErrors[field as keyof FieldErrors] = issue.message;
         }
       }
-      setClientErrors(nextErrors);
+      setErrors(nextErrors);
+      setStatus("error");
+      setStatusMessage("Zkontrolujte prosím vyplněná pole.");
       return;
     }
-    setClientErrors(undefined);
+    setErrors({});
+
+    if (honeypot.trim() !== "" || !startedAtRef.current || elapsed < MIN_FILL_TIME_MS) {
+      // Pretend success so bots don't learn anything from the response.
+      succeed();
+      return;
+    }
+
+    const data = result.data;
+    const serviceLabel =
+      serviceOptions.find((o) => o.value === data.service)?.label ?? data.service;
+
+    const payload: Record<string, string> = {
+      name: data.name,
+      phone: data.phone,
+      email: data.email,
+      sluzba: serviceLabel,
+      vuz: data.carModel,
+      termin: data.preferredDate,
+      message: data.message,
+      _subject: `Poptávka z webu – ${serviceLabel} – ${data.name}`,
+      _template: "table",
+      _captcha: "false",
+      _honey: honeypot,
+    };
+    if (data.email) payload._replyto = data.email;
+
+    setStatus("submitting");
+    setStatusMessage("");
+    try {
+      const response = await fetch(FORMSUBMIT_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const json = (await response.json().catch(() => null)) as {
+        success?: boolean | string;
+      } | null;
+      if (!response.ok || String(json?.success) !== "true") {
+        throw new Error(`FormSubmit responded with ${response.status}`);
+      }
+      succeed();
+    } catch (err) {
+      console.error("ContactForm: submission failed", err);
+      setStatus("error");
+      setStatusMessage(ERROR_MESSAGE);
+    }
   };
 
   return (
@@ -90,17 +149,15 @@ export default function ContactForm() {
       <form
         ref={formRef}
         key={formKey}
-        action={formAction}
         onSubmit={handleSubmit}
         noValidate
         className="mt-6 flex flex-col gap-5"
       >
         {/* Honeypot — hidden from real visitors, catches simple bots */}
         <div className="absolute h-0 w-0 overflow-hidden opacity-0" aria-hidden="true">
-          <label htmlFor="website">Nevyplňujte toto pole</label>
-          <input type="text" id="website" name="website" tabIndex={-1} autoComplete="off" />
+          <label htmlFor="_honey">Nevyplňujte toto pole</label>
+          <input type="text" id="_honey" name="_honey" tabIndex={-1} autoComplete="off" />
         </div>
-        <input type="hidden" name="startedAt" value={startedAt} />
 
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
           <Field label="Jméno a příjmení" htmlFor="name" error={errors.name} required>
@@ -236,11 +293,11 @@ export default function ContactForm() {
         </div>
 
         <div className="min-h-6" aria-live="polite">
-          {state.status === "success" && (
-            <p className="text-sm font-medium text-emerald-400">{state.message}</p>
+          {status === "success" && (
+            <p className="text-sm font-medium text-emerald-400">{statusMessage}</p>
           )}
-          {state.status === "error" && !Object.keys(errors).length && (
-            <p className="text-sm font-medium text-[var(--accent-text)]">{state.message}</p>
+          {status === "error" && !Object.keys(errors).length && (
+            <p className="text-sm font-medium text-[var(--accent-text)]">{statusMessage}</p>
           )}
         </div>
 
