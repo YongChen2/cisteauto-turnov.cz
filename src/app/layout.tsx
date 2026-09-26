@@ -3,6 +3,7 @@ import { Manrope } from "next/font/google";
 import { site } from "@/data/site";
 import Header from "@/components/Header";
 import MobileCallButton from "@/components/MobileCallButton";
+import CookieConsent from "@/components/CookieConsent";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -68,6 +69,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Header />
         {children}
         <MobileCallButton />
+        <CookieConsent />
       </body>
     </html>
   );

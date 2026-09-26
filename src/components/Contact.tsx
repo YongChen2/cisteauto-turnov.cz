@@ -1,5 +1,6 @@
 import { site } from "@/data/site";
 import ContactForm from "@/components/ContactForm";
+import ConsentMap from "@/components/ConsentMap";
 
 export default function Contact() {
   return (
@@ -46,16 +47,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="overflow-hidden rounded-2xl border border-white/10">
-              <iframe
-                title="Mapa — Čisté auto Turnov"
-                src="https://www.google.com/maps?q=Přepeře+227,+511+01+Turnov&output=embed"
-                className="h-80 w-full"
-                style={{ border: 0 }}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
+            <ConsentMap />
           </div>
 
           <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 sm:p-8">

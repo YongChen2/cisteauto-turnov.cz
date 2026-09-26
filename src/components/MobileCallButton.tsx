@@ -3,8 +3,13 @@ import { site } from "@/data/site";
 export default function MobileCallButton() {
   return (
     <div
-      className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-neutral-950/95 p-3 backdrop-blur sm:hidden"
-      style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom, 0px))" }}
+      className="fixed inset-x-0 z-40 border-t border-white/10 bg-neutral-950/95 p-3 backdrop-blur sm:hidden"
+      style={{
+        // Sits above the cookie banner while it is shown (set by CookieConsent).
+        bottom: "var(--cookie-banner-height, 0px)",
+        paddingBottom:
+          "max(0.75rem, calc(env(safe-area-inset-bottom, 0px) - var(--cookie-banner-height, 0px)))",
+      }}
     >
       <a
         href={site.phoneHref}
