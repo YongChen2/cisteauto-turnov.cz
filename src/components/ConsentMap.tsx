@@ -27,7 +27,7 @@ export default function ConsentMap() {
 
   return (
     <div className="flex h-80 flex-col items-center justify-center gap-4 rounded-2xl border border-white/10 bg-white/[0.02] px-6 text-center">
-      <svg viewBox="0 0 24 24" className="h-8 w-8 text-[var(--accent-text)]" fill="currentColor" aria-hidden="true">
+      <svg viewBox="0 0 24 24" className="h-8 w-8 text-accent-text" fill="currentColor" aria-hidden="true">
         <path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z" />
       </svg>
       <p className="text-white">{site.address}</p>
@@ -38,7 +38,7 @@ export default function ConsentMap() {
         <button
           type="button"
           onClick={() => saveConsent({ externalMedia: true })}
-          className="min-h-11 rounded-full bg-[var(--accent)] px-6 py-2.5 text-sm font-semibold text-white transition hover:brightness-110"
+          className="min-h-11 rounded-full bg-accent px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-accent-hover"
         >
           Zobrazit mapu
         </button>

@@ -103,7 +103,7 @@ export default function CookiesPage() {
           cookies“ najdete také v patičce každé stránky.
         </p>
         <div>
-          <CookieSettingsButton className="min-h-11 rounded-full bg-[var(--accent)] px-6 py-2.5 text-sm font-semibold text-white transition hover:brightness-110" />
+          <CookieSettingsButton className="min-h-11 rounded-full bg-accent px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-accent-hover" />
         </div>
       </LegalSection>
 

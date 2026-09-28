@@ -76,7 +76,7 @@ export default function CookieConsent() {
             <p className="text-sm leading-relaxed text-white/75">
               Web používá nezbytné úložiště pro zapamatování vaší volby. Mapu Google načteme jen
               s vaším souhlasem.{" "}
-              <a href="/cookies" className="underline hover:text-white">
+              <a href="/cookies" className="underline hover:text-accent-text">
                 Zásady cookies
               </a>
             </p>
@@ -187,13 +187,13 @@ function ConsentToggle({
         aria-checked={checked}
         aria-describedby={`${id}-description`}
         onChange={(e) => onChange?.(e.target.checked)}
-        className="mt-0.5 h-6 w-11 flex-shrink-0 cursor-pointer appearance-none rounded-full bg-white/20 transition before:block before:h-5 before:w-5 before:translate-x-0.5 before:translate-y-0.5 before:rounded-full before:bg-white before:transition checked:bg-[var(--accent)] checked:before:translate-x-[1.375rem] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-text)] disabled:cursor-not-allowed disabled:opacity-60"
+        className="mt-0.5 h-6 w-11 flex-shrink-0 cursor-pointer appearance-none rounded-full bg-white/20 transition before:block before:h-5 before:w-5 before:translate-x-0.5 before:translate-y-0.5 before:rounded-full before:bg-white before:transition checked:bg-accent checked:before:translate-x-[1.375rem] disabled:cursor-not-allowed disabled:opacity-60"
       />
     </div>
   );
 }
 
 const primaryButton =
-  "min-h-11 rounded-full bg-[var(--accent)] px-6 py-2.5 text-sm font-semibold text-white transition hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-text)]";
+  "min-h-11 rounded-full bg-accent px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-accent-hover";
 const secondaryButton =
-  "min-h-11 rounded-full border border-white/20 px-6 py-2.5 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-text)]";
+  "min-h-11 rounded-full border border-white/20 px-6 py-2.5 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/5";

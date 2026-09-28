@@ -11,7 +11,7 @@ export default function ServiceCard({ service, onOpen }: ServiceCardProps) {
     <button
       type="button"
       onClick={onOpen}
-      className="group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] text-left transition hover:border-[var(--accent)]/50 hover:bg-white/[0.06] cursor-pointer"
+      className="group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] text-left transition hover:border-accent/60 hover:bg-white/[0.06] hover:shadow-accent-glow focus-visible:border-accent/60 cursor-pointer"
     >
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-neutral-900">
         <Image
@@ -26,7 +26,7 @@ export default function ServiceCard({ service, onOpen }: ServiceCardProps) {
       <div className="flex flex-1 flex-col gap-2 p-5">
         <h3 className="text-lg font-semibold text-white">{service.name}</h3>
         <p className="text-sm leading-relaxed text-white/60">{service.shortDescription}</p>
-        <span className="mt-auto pt-3 text-sm font-medium text-[var(--accent-text)]">{service.price}</span>
+        <span className="mt-auto pt-3 text-sm font-medium text-accent-text">{service.price}</span>
       </div>
     </button>
   );

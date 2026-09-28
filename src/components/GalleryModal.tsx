@@ -137,7 +137,7 @@ export default function GalleryModal({ service, onClose }: GalleryModalProps) {
                 type="button"
                 onClick={goPrev}
                 aria-label="Předchozí fotografie"
-                className="absolute left-2 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/50 text-white transition hover:bg-black/70 cursor-pointer"
+                className="absolute left-2 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/50 text-white transition hover:bg-accent cursor-pointer"
               >
                 <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 6l-6 6 6 6" />
@@ -147,7 +147,7 @@ export default function GalleryModal({ service, onClose }: GalleryModalProps) {
                 type="button"
                 onClick={goNext}
                 aria-label="Další fotografie"
-                className="absolute right-2 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/50 text-white transition hover:bg-black/70 cursor-pointer"
+                className="absolute right-2 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/50 text-white transition hover:bg-accent cursor-pointer"
               >
                 <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 6l6 6-6 6" />
@@ -167,7 +167,7 @@ export default function GalleryModal({ service, onClose }: GalleryModalProps) {
                 aria-label={`Zobrazit fotografii ${i + 1}`}
                 aria-current={i === index}
                 className={`h-2 w-2 rounded-full transition cursor-pointer ${
-                  i === index ? "bg-[var(--accent)]" : "bg-white/30 hover:bg-white/60"
+                  i === index ? "bg-accent" : "bg-white/30 hover:bg-white/60"
                 }`}
               />
             ))}
@@ -181,7 +181,7 @@ export default function GalleryModal({ service, onClose }: GalleryModalProps) {
               window.dispatchEvent(new CustomEvent("contact:prefill", { detail: service.slug }));
               onClose();
             }}
-            className="rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-semibold text-white transition hover:brightness-110 cursor-pointer"
+            className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition hover:bg-accent-hover cursor-pointer"
           >
             Objednat / zeptat se
           </button>

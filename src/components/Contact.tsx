@@ -7,7 +7,7 @@ export default function Contact() {
     <section id="kontakt" className="border-t border-white/10 bg-neutral-950">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Kontakt</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl heading-accent">Kontakt</h2>
           <p className="mt-3 text-white/60">Domluvte si termín telefonicky, e-mailem nebo přes formulář.</p>
         </div>
 
@@ -20,13 +20,13 @@ export default function Contact() {
               </div>
               <div>
                 <p className="text-sm font-medium uppercase tracking-wide text-white/40">Telefon</p>
-                <a href={site.phoneHref} className="mt-1 block text-lg text-white hover:text-[var(--accent-text)]">
+                <a href={site.phoneHref} className="mt-1 block text-lg text-white hover:text-accent-text">
                   {site.phone}
                 </a>
               </div>
               <div>
                 <p className="text-sm font-medium uppercase tracking-wide text-white/40">E-mail</p>
-                <a href={site.emailHref} className="mt-1 block text-lg text-white hover:text-[var(--accent-text)]">
+                <a href={site.emailHref} className="mt-1 block text-lg text-white hover:text-accent-text">
                   {site.email}
                 </a>
               </div>
@@ -34,7 +34,7 @@ export default function Contact() {
               <div className="flex flex-wrap gap-4">
                 <a
                   href={site.phoneHref}
-                  className="rounded-full bg-[var(--accent)] px-7 py-3 text-sm font-semibold text-white transition hover:brightness-110"
+                  className="rounded-full bg-accent px-7 py-3 text-sm font-semibold text-white transition hover:bg-accent-hover"
                 >
                   Zavolat
                 </a>
@@ -55,7 +55,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col items-center justify-between gap-3 rounded-2xl border border-[var(--accent)]/30 bg-[var(--accent)]/10 px-6 py-5 text-center sm:flex-row sm:text-left">
+        <div className="mt-10 flex flex-col items-center justify-between gap-3 rounded-2xl border border-accent/30 bg-accent-muted px-6 py-5 text-center sm:flex-row sm:text-left">
           <p className="text-sm text-white/80">
             Hledáte dárek? Nabízíme i dárkové poukazy na naše služby — vhodné k narozeninám i svátku.
           </p>

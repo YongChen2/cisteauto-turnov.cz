@@ -23,13 +23,13 @@ export default function HowItWorks() {
     <section className="border-t border-white/10 bg-neutral-950">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Jak to probíhá</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl heading-accent">Jak to probíhá</h2>
         </div>
 
         <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-3">
           {steps.map((s) => (
             <div key={s.step} className="text-center sm:text-left">
-              <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-[var(--accent)]/15 text-sm font-bold text-[var(--accent-text)] sm:mx-0">
+              <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-accent-muted text-sm font-bold text-accent-text ring-1 ring-accent/40 sm:mx-0">
                 {s.step}
               </div>
               <h3 className="mt-4 text-lg font-semibold text-white">{s.title}</h3>

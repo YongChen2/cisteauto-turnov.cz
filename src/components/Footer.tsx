@@ -1,7 +1,7 @@
 import { site } from "@/data/site";
 import CookieSettingsButton from "@/components/CookieSettingsButton";
 
-const linkClass = "transition hover:text-[var(--accent-text)]";
+const linkClass = "transition hover:text-accent-text";
 
 export default function Footer() {
   const year = new Date().getFullYear();

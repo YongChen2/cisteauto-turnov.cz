@@ -275,20 +275,20 @@ export default function ContactForm() {
               required
               aria-invalid={Boolean(errors.consent)}
               aria-describedby={errors.consent ? "consent-error" : undefined}
-              className="mt-0.5 h-5 w-5 flex-shrink-0 rounded border-white/30 bg-transparent accent-[var(--accent)]"
+              className="mt-0.5 h-5 w-5 flex-shrink-0 rounded border-white/30 bg-transparent accent-accent"
             />
             <span>
               Souhlasím se{" "}
-              <a href="/ochrana-osobnich-udaju" className="underline hover:text-white">
+              <a href="/ochrana-osobnich-udaju" className="underline hover:text-accent-text">
                 zpracováním osobních údajů
               </a>{" "}
               za účelem vyřízení poptávky.
             </span>
           </label>
           {errors.consent && (
-            <p id="consent-error" className="mt-1 text-sm text-[var(--accent-text)]">
+            <ErrorMessage id="consent-error" className="mt-1">
               {errors.consent}
-            </p>
+            </ErrorMessage>
           )}
         </div>
 
@@ -297,14 +297,14 @@ export default function ContactForm() {
             <p className="text-sm font-medium text-emerald-400">{statusMessage}</p>
           )}
           {status === "error" && !Object.keys(errors).length && (
-            <p className="text-sm font-medium text-[var(--accent-text)]">{statusMessage}</p>
+            <ErrorMessage className="font-medium">{statusMessage}</ErrorMessage>
           )}
         </div>
 
         <button
           type="submit"
           disabled={isPending}
-          className="flex min-h-11 items-center justify-center gap-2 rounded-full bg-[var(--accent)] px-7 py-3 text-sm font-semibold text-white transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60"
+          className="flex min-h-11 items-center justify-center gap-2 rounded-full bg-accent px-7 py-3 text-sm font-semibold text-white transition hover:bg-accent-hover disabled:cursor-not-allowed disabled:opacity-60"
         >
           {isPending && (
             <svg viewBox="0 0 24 24" className="h-4 w-4 animate-spin" fill="none">
@@ -320,8 +320,8 @@ export default function ContactForm() {
 }
 
 function inputClass(hasError: boolean) {
-  return `min-h-11 w-full rounded-xl border bg-white/[0.03] px-4 py-2.5 text-white placeholder:text-white/30 outline-none transition focus:border-[var(--accent)] ${
-    hasError ? "border-[var(--accent)]" : "border-white/15"
+  return `min-h-11 w-full rounded-xl border bg-white/[0.03] px-4 py-2.5 text-white placeholder:text-white/30 outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/30 ${
+    hasError ? "border-danger" : "border-white/15"
   }`;
 }
 
@@ -342,16 +342,46 @@ function Field({
     <div className="flex flex-col gap-1.5">
       <label htmlFor={htmlFor} className="text-sm font-medium text-white/80">
         {label}
-        {required && <span className="text-[var(--accent-text)]"> *</span>}
+        {required && <span className="text-accent-text"> *</span>}
       </label>
       {children}
       <div className="min-h-5">
         {error && (
-          <p id={`${htmlFor}-error`} className="text-sm text-[var(--accent-text)]">
-            {error}
-          </p>
+          <ErrorMessage id={`${htmlFor}-error`}>{error}</ErrorMessage>
         )}
       </div>
     </div>
+  );
+}
+
+// Errors use the separate "danger" token plus a warning icon, so they are
+// distinguishable from the red accent without relying on color alone.
+function ErrorMessage({
+  id,
+  className = "",
+  children,
+}: {
+  id?: string;
+  className?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <p id={id} className={`flex items-start gap-1.5 text-sm text-danger ${className}`}>
+      <svg
+        viewBox="0 0 24 24"
+        className="mt-0.5 h-4 w-4 flex-shrink-0"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        aria-hidden="true"
+      >
+        <path strokeLinejoin="round" d="M12 3.5 2.5 20h19L12 3.5Z" />
+        <path strokeLinecap="round" d="M12 10v4.5M12 17.2v.1" />
+      </svg>
+      <span>
+        <span className="sr-only">Chyba: </span>
+        {children}
+      </span>
+    </p>
   );
 }

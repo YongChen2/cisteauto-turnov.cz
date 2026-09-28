@@ -29,7 +29,7 @@ export default function Faq() {
     <section className="border-t border-white/10 bg-neutral-950">
       <div className="mx-auto max-w-3xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Časté dotazy</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl heading-accent">Časté dotazy</h2>
         </div>
 
         <div className="mt-10 divide-y divide-white/10 rounded-2xl border border-white/10">
@@ -39,7 +39,7 @@ export default function Faq() {
                 {faq.question}
                 <svg
                   viewBox="0 0 24 24"
-                  className="h-5 w-5 flex-shrink-0 text-white/50 transition group-open:rotate-45"
+                  className="h-5 w-5 flex-shrink-0 text-accent-text transition group-open:rotate-45"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"

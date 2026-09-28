@@ -39,4 +39,4 @@ export function Todo({ children }: { children: React.ReactNode }) {
   );
 }
 
-export const legalLinkClass = "text-white underline hover:text-[var(--accent-text)]";
+export const legalLinkClass = "text-white underline hover:text-accent-text";

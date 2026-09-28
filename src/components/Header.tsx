@@ -10,17 +10,17 @@ export default function Header() {
         </Link>
 
         <nav className="hidden items-center gap-8 text-sm font-medium text-white/70 sm:flex">
-          <Link href="/#sluzby" className="transition hover:text-white">
+          <Link href="/#sluzby" className="transition hover:text-accent-text">
             Služby
           </Link>
-          <Link href="/#kontakt" className="transition hover:text-white">
+          <Link href="/#kontakt" className="transition hover:text-accent-text">
             Kontakt
           </Link>
         </nav>
 
         <a
           href={site.phoneHref}
-          className="rounded-full bg-[var(--accent)] px-4 py-2 text-sm font-semibold text-white transition hover:brightness-110 sm:px-5"
+          className="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-white transition hover:bg-accent-hover sm:px-5"
         >
           Zavolat
         </a>
