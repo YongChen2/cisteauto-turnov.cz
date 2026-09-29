@@ -2,7 +2,7 @@ import { memo } from "react";
 import Image from "next/image";
 import type { Service } from "@/data/services";
 import { blurProps } from "@/lib/image-meta";
-import { preloadGalleryPhoto } from "@/lib/gallery";
+import { preloadServiceGallery } from "@/lib/gallery";
 
 type ServiceCardProps = {
   service: Service;
@@ -11,7 +11,7 @@ type ServiceCardProps = {
 
 function ServiceCard({ service, onOpen }: ServiceCardProps) {
   // Intent to open (hover, keyboard focus, touch) warms the gallery's first photo.
-  const warmUp = () => preloadGalleryPhoto(service.photos[0]);
+  const warmUp = () => preloadServiceGallery(service);
 
   return (
     <button

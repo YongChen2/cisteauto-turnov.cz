@@ -1,28 +1,98 @@
 {
-  "/images/cisteni-interieru/01.webp": {
-    "width": 1600,
-    "height": 1065,
-    "blurDataURL": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAAAwAgCdASoQAAsAA4BaJZwAD5LPtXxOM71WCAD82B/7OPptgijmK7qKKLyak7u99Wkgx6+phL7mGrFle4yRhvL5dMzCE9P5hgG9j5ADRQGcutvjBHiWNvgTSGo/ntxK2UES0xHsPIAAAA=="
+  "/images/cisteni-interieru/cover-pred-po.webp": {
+    "width": 1200,
+    "height": 900,
+    "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAQAgCdASoQAAwAA4BaJZwAD4eQOF3p+3MAAPKdSxuFsH5T/UWMo+XyEJYPFXIml2jAF8o6wcXHwhgQ7XuGIWWJgJbaa77ef/z+mIBAAAA="
   },
-  "/images/cisteni-interieru/02.webp": {
-    "width": 1600,
-    "height": 1060,
-    "blurDataURL": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAAAQAgCdASoQAAsAA4BaJZQCdAD2BhWlqHsAAOJ022qp7Mfl/SnRCwZgv/5yrR4xFUFhqsytunfevbBtzv1b459cAwe85BR3tQ/PDx4ytwoAAA=="
+  "/images/cisteni-interieru/dvere-po.webp": {
+    "width": 900,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAADwAwCdASoQABUAPu1kqk4ppaQiMAgBMB2JQBOgA3anEfYECUrb6IFwAPeLCJWMuKS+TmxkySsQooxn3oNJ4M8SJTcV6qpxmKMSGsKjwiGfzNOjWHjI6ZldrpwuPy1S8x6gZE7iYHCZ0pEfuHlWuDBPbJvsT0o7Wi7VBefpxuo25nX3WGRYXP024AA="
   },
-  "/images/cisteni-interieru/03.webp": {
-    "width": 1600,
-    "height": 1060,
-    "blurDataURL": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADQAQCdASoQAAsAA4BaJYwCw7CmCwL0AAD+gtn+Hr449N7OyogIyQQ00KG8TI8FUIwmrBAq0tV69IMW4M9Y3RuDpu+ig+rKJoxiOLFRppdwk0olumYyAAAA"
+  "/images/cisteni-interieru/dvere-pred.webp": {
+    "width": 900,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAAAwBACdASoQABUAPu1iqU2ppaOiMAgBMB2JZwDKAYvW5RGh/9G85je6BgAA/o+X3QdvbClzjneZg/TsMwKTkOEfvGn9jrrBC59xSK0JO8W6px3v4GxcVjn+gbCGsE9bJ/T3+/U6y0mL3DinLeFmArHj+TrXtdEe/MK9Y/6brdAAAA=="
   },
-  "/images/cisteni-interieru/04.webp": {
-    "width": 1348,
-    "height": 899,
-    "blurDataURL": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAAAwAgCdASoQAAsAA4BaJbACdAYv1wnGQraTgAD947DDhw6BR0v1+CeYqXToQni/6iJ2VaGE6cuD9a2EStSn5vGzoNUue50zef7XrhzC1b9C51y+fJQ13KHNPSNumS0/Z9y5FgAA"
+  "/images/cisteni-interieru/koberec-po.webp": {
+    "width": 900,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAABQBACdASoQABUAPu1iqU2ppaOiMAgBMB2JZwDLLCP/8MRtuOrg97hQL2FwAP66dmHrC3D1DPqtty9PjiplvnH9SMSTU2Rzi6ckzWRYdmJFWz7p0nvxya10Ghwst2iL//4Itk/m8As8sEdYAAA="
   },
-  "/images/cisteni-interieru/05.webp": {
-    "width": 1600,
-    "height": 1067,
-    "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADwAQCdASoQAAsAA4BaJZwAAxfWBnj4ofAA/vNEJZyvxOtRiqCgeOZXH67lINkd3yt8MMXqJ8viDwqPG8VBGyviG3hFdiTPeaLkAA=="
+  "/images/cisteni-interieru/koberec-pred.webp": {
+    "width": 900,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAAAwBACdASoQABUAPu1iqU2ppaOiMAgBMB2JZQC/OCKes+qGDdwCEfuel4AA/toKOAEaWqTq7S/68HqQnK7x9P2SaWJkGG5qoekCOHpP51yegDN9bZle6VzA78ncw8+p7FmEZoAA"
+  },
+  "/images/cisteni-interieru/kufr-bocnice-po.webp": {
+    "width": 900,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAACwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JZwDG9Bu0ogN1GXtqVgDw2KhPBHqEwWT8JAXGEb3T6cPwt6T3TeJ/ca61cYRGjFSC3X2TFAAhFwDgk5GAzJTvbOgHv2i8AAA="
+  },
+  "/images/cisteni-interieru/kufr-bocnice-pred.webp": {
+    "width": 900,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAADQAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JZQDCgBxC5leIX9QPmgAA7qVeTQW2fjRQVXNFmQJDzL2O4JiZoxcPkd/amfFxWTQnSVZJAlnWO8Gy6B7d0QIfazIFUO5Vv6o2GkNqA76v6iySWQAAAA=="
+  },
+  "/images/cisteni-interieru/kufr-uchyty-po.webp": {
+    "width": 900,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAACQAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JaQAAWg/CggVpeKqgAP5llpzjFa3ACUgt2eoW5BjaTYC60tirWB7gNkJZEe6CyPwQHo3/tGapxMmuYc/X7e+FwrAAAA=="
+  },
+  "/images/cisteni-interieru/kufr-uchyty-pred.webp": {
+    "width": 900,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAABwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JZwDLLAxBulDarCAA/lUqv7s3XqabCo74z/oHN5Jloo0TNVU0gDcKkOlgFMT/Ueoj9J4i0wuVXJhlbGiHPAAA"
+  },
+  "/images/cisteni-interieru/packa-sedadla-po.webp": {
+    "width": 900,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAADQAwCdASoQABUALrV2u12jqampiYC0SzADuABGF7iAUf6w+2rg8QAA8DFbtEj6yvL/zB+c2ajKNTXm6Eg0V/p2u4ijWR5nx3gcOSHCfuifhlQ9v63bSp9niZk6Otg9fgvLs5qQzgh1LjvwRbJAtwtWF6IpnLXzIog1zNMmNtXRSCDNYY3BaPZUTtb/bGLXnMeHBUjhCAA="
+  },
+  "/images/cisteni-interieru/packa-sedadla-pred.webp": {
+    "width": 900,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAACQAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JZQAASZ+k8OF+ZAlAANlxe9dGZxgtPmSTQvKymQ0XCaXMTtZ36+ZK/aElJIWQG1QhgrheUnNe3QtW7sLOH+J0fmc9ZjgSl4iKfsSfe9iVLb44Q7nhfeaFC+UXh4swww4XHIYTRR3uV9MZed0VAAAA"
+  },
+  "/images/cisteni-interieru/palubni-deska-po.webp": {
+    "width": 900,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAADwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JZwAAXrn+VP+a89HdcE1gAP14sPE03t2owzMjaxsypf5f4xsitSqG/PMO7akmu0gwEdDE8lZvDNrbriu2hxmsqMUbJKSnvX2A7GU0tsZKtPkuZEGyC1wH0oT7U8fAAAA="
+  },
+  "/images/cisteni-interieru/palubni-deska-pred.webp": {
+    "width": 900,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAADwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JZwAARsCzBsk9+yuNksUwAP7kSTI/BGiQxVMwGonuZxWAGEamQMJId3spoEGSzLEq5x0X2g4Vmd2sB6zNPLQgo75Vgw5oaX7f6WE+pF7FFWwIwIYtk7a5Ave6aA+CBNEhOTbfLEZ+3v2j2WrCAAAA"
+  },
+  "/images/cisteni-interieru/radio-po.webp": {
+    "width": 900,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAACQAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JZwAAWOaAlaRh1LZ4APaOY7to8pcUIAk5G6aKpUelmWS+7NKNbeF+zLON0sIwlKlC6HdfCpkErfJ/rNgtJo12sbPzUtZapjrQY4AA"
+  },
+  "/images/cisteni-interieru/radio-pred.webp": {
+    "width": 900,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAADwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JZwAFEAFA6Wk84bZngjpgAP5g8RcTJIDN09tbjlJOGetKF76UCoCQAEZU5rNdGoH08mdvq573X0eF+r6jmFrnHQTQayF4ZyNGR6AAED7YBya0KsIDpP44eUCUFM3YcmOj7AduRz9+OIV3YffBzDM8f5yMoT3ssAAAAA=="
+  },
+  "/images/cisteni-interieru/sedadlo-po.webp": {
+    "width": 900,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAAAwBACdASoQABUAPu1iqU2ppaOiMAgBMB2JaQAAXy9gHpTkVNXYUEdzQAAA/tmfa/HDHWyDOzI5Trqbdk1AAW9T1CXlSC5/tMQLVDBjg6i9pxYPkT5XUyxSSRmzez2KToymof0p1YRmzKiHlXKN0bWz1kojMo+kaBAAAA=="
+  },
+  "/images/cisteni-interieru/sedadlo-pred.webp": {
+    "width": 900,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAADQAwCdASoQABUAPu1iqU2ppaQiMAgBMB2JZwAASECEUcZc4tL8eUAA/onJd3kTbGAP9OI1Tg+ImAiGOA7s4AqM+/irSY0x04TAw18zcsM+tNvPA8x8HBtouU7m7CEBz5/cGT3xkg/QAA=="
+  },
+  "/images/cisteni-interieru/tunel-po.webp": {
+    "width": 900,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAACwAwCdASoQABUAPu1iqU2ppaQiMAgBMB2JZwAAQyu204XzIDeTAAD9vp+T1SPpzn042u3ARQtwFs872275PS9srVd6dwcymDd1QoxqpKIXZZT9mzl+GqE9kqsUMz3Km3WtLkZFB4UpjRSKUzw874BgAAA="
+  },
+  "/images/cisteni-interieru/tunel-pred.webp": {
+    "width": 900,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAADQAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JZQAAXxKl3TviKGtCnvAA/W9SZHpigH4Tf3HZVnv2OGMk45QIZAaW/dUzAJlJRdougHZz64yVdOF+8lpV1UqJ7ewM1gozcfvS0rf+dkfAMzWGUH6GXjN9m2PhHL6wuAIgnOrjOVAAAA=="
   },
   "/images/cisteni-klimatizace-ozonem/01.webp": {
     "width": 1600,

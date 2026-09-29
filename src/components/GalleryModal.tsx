@@ -3,16 +3,18 @@
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import type { Service } from "@/data/services";
+import type { BeforeAfterPair, Service } from "@/data/services";
 import { site } from "@/data/site";
 import { blurProps } from "@/lib/image-meta";
-import { GALLERY_SIZES } from "@/lib/gallery";
+import { GALLERY_SIZES, preloadBeforeAfter } from "@/lib/gallery";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 
 type GalleryModalProps = {
   service: Service;
   onClose: () => void;
 };
 
+const NO_PAIRS: BeforeAfterPair[] = [];
 const SWIPE_DISTANCE = 40;
 /** Movement after which a touch is locked to one axis; only horizontal swipes switch photos. */
 const DIRECTION_LOCK = 10;
@@ -25,8 +27,12 @@ export default function GalleryModal({ service, onClose }: GalleryModalProps) {
   const onCloseRef = useRef(onClose);
   const afterCloseRef = useRef<(() => void) | null>(null);
   const photos = service.photos;
-  const count = photos.length;
+  // Services with before/after pairs show a comparison slider instead of plain photos.
+  const pairs = service.beforeAfter ?? NO_PAIRS;
+  const isPairs = pairs.length > 0;
+  const count = isPairs ? pairs.length : photos.length;
   const hasMultiple = count > 1;
+  const itemLabel = isPairs ? "porovnání" : "fotografie";
 
   useEffect(() => {
     onCloseRef.current = onClose;
@@ -37,6 +43,14 @@ export default function GalleryModal({ service, onClose }: GalleryModalProps) {
 
   // Closing is always immediate and idempotent; the history entry is tidied up on unmount.
   const requestClose = useCallback(() => onCloseRef.current(), []);
+
+  // Current pair plus its neighbours are always ready (the first one was warmed on card hover).
+  useEffect(() => {
+    if (!isPairs) return;
+    preloadBeforeAfter(pairs[index]);
+    preloadBeforeAfter(pairs[(index + 1) % count]);
+    preloadBeforeAfter(pairs[(index - 1 + count) % count]);
+  }, [isPairs, pairs, index, count]);
 
   const markLoaded = useCallback((i: number) => {
     setLoaded((prev) => (prev.has(i) ? prev : new Set(prev).add(i)));
@@ -74,17 +88,19 @@ export default function GalleryModal({ service, onClose }: GalleryModalProps) {
         requestClose();
         return;
       }
-      if (hasMultiple && e.key === "ArrowLeft") {
+      // Arrow keys on the before/after range input move the slider, not the gallery.
+      const onRange = e.target instanceof HTMLInputElement && e.target.type === "range";
+      if (hasMultiple && !onRange && e.key === "ArrowLeft") {
         goPrev();
         return;
       }
-      if (hasMultiple && e.key === "ArrowRight") {
+      if (hasMultiple && !onRange && e.key === "ArrowRight") {
         goNext();
         return;
       }
       if (e.key === "Tab") {
         const focusable = dialogRef.current?.querySelectorAll<HTMLElement>(
-          'button, [href], [tabindex]:not([tabindex="-1"])'
+          'button, input, [href], [tabindex]:not([tabindex="-1"])'
         );
         if (!focusable || focusable.length === 0) return;
         const first = focusable[0];
@@ -178,15 +194,25 @@ export default function GalleryModal({ service, onClose }: GalleryModalProps) {
         </div>
 
         {/* Fixed-size stage: every photo is stacked and cross-faded, so switching never shifts layout. */}
-        {/* Swipe gestures live on the photo only, so the text below can still scroll normally. */}
+        {/* Swipe gestures live on the photo only, so the text below can still scroll normally.
+            Before/after pairs have no swipe: dragging the slider handle must never switch pairs. */}
         <div
-          className="relative aspect-[4/3] max-h-[55dvh] w-full flex-none overflow-hidden bg-neutral-900 sm:rounded-xl"
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-          onTouchCancel={handleTouchCancel}
+          className={
+            isPairs
+              ? "relative mx-auto aspect-[3/4] w-full max-w-[min(100%,calc(62dvh*0.75))] flex-none overflow-hidden bg-neutral-900 sm:rounded-xl"
+              : "relative aspect-[4/3] max-h-[55dvh] w-full flex-none overflow-hidden bg-neutral-900 sm:rounded-xl"
+          }
+          {...(isPairs
+            ? {}
+            : {
+                onTouchStart: handleTouchStart,
+                onTouchMove: handleTouchMove,
+                onTouchEnd: handleTouchEnd,
+                onTouchCancel: handleTouchCancel,
+              })}
         >
-          {photos.map((photo, i) => {
+          {isPairs && <BeforeAfterSlider key={index} pair={pairs[index]} />}
+          {!isPairs && photos.map((photo, i) => {
             const active = i === index;
             return (
               <div
@@ -225,7 +251,7 @@ export default function GalleryModal({ service, onClose }: GalleryModalProps) {
             );
           })}
 
-          {!loaded.has(index) && (
+          {!isPairs && !loaded.has(index) && (
             <div className="pointer-events-none absolute inset-0 flex items-center justify-center" role="status">
               <span className="sr-only">Načítání fotografie…</span>
               <svg viewBox="0 0 24 24" className="h-8 w-8 animate-spin text-white/70" fill="none" aria-hidden="true">
@@ -240,7 +266,7 @@ export default function GalleryModal({ service, onClose }: GalleryModalProps) {
               <button
                 type="button"
                 onClick={goPrev}
-                aria-label="Předchozí fotografie"
+                aria-label={`Předchozí ${itemLabel}`}
                 className="absolute left-2 top-1/2 flex h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-black/50 text-white transition hover:bg-accent"
               >
                 <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
@@ -250,7 +276,7 @@ export default function GalleryModal({ service, onClose }: GalleryModalProps) {
               <button
                 type="button"
                 onClick={goNext}
-                aria-label="Další fotografie"
+                aria-label={`Další ${itemLabel}`}
                 className="absolute right-2 top-1/2 flex h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-black/50 text-white transition hover:bg-accent"
               >
                 <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
@@ -263,12 +289,12 @@ export default function GalleryModal({ service, onClose }: GalleryModalProps) {
 
         {hasMultiple && (
           <div className="mt-1 flex items-center justify-center">
-            {photos.map((photo, i) => (
+            {Array.from({ length: count }, (_, i) => (
               <button
-                key={photo.src + i}
+                key={i}
                 type="button"
                 onClick={() => setIndex(i)}
-                aria-label={`Zobrazit fotografii ${i + 1}`}
+                aria-label={`Zobrazit ${itemLabel} ${i + 1} z ${count}`}
                 aria-current={i === index}
                 className="group flex h-11 w-7 cursor-pointer items-center justify-center"
               >

@@ -8,6 +8,14 @@ export type ServicePhoto = {
   natural?: { width: number; height: number };
 };
 
+/** Dvojice fotek stejného místa před a po úpravě (zobrazí se jako porovnávací posuvník). */
+export type BeforeAfterPair = {
+  before: string;
+  after: string;
+  /** co je na fotce, bez "před/po" — např. "palubní deska s větrákem" */
+  alt: string;
+};
+
 export type Service = {
   slug: string;
   name: string;
@@ -20,8 +28,10 @@ export type Service = {
   priceVariants?: { label: string; price: string }[];
   /** fotka na kartě služby */
   cover: ServicePhoto;
-  /** fotky v modal galerii */
+  /** fotky v modal galerii (u služby s páry před/po zůstává prázdné) */
   photos: ServicePhoto[];
+  /** páry před/po — když jsou vyplněné, galerie místo fotek zobrazí porovnávací posuvník */
+  beforeAfter?: BeforeAfterPair[];
 };
 
 export const services: Service[] = [
@@ -33,45 +43,57 @@ export const services: Service[] = [
     description:
       "Důkladné vysátí koberců i zavazadlového prostoru, tepování sedadel, dveřních výplní a koberců, omytí veškerých plastů a jejich ošetření antistatickým přípravkem, mytí oken zevnitř. Příplatky za kůži, kombinaci látka/alcantara, silné znečištění nebo srst zvířat řešíme individuálně na místě.",
     price: "od 2 000 Kč",
-    // Dočasné fotky (licence umožňuje komerční použití), bez obličejů a log, nahradit fotkami
-    // z vlastní dílny:
-    // 1) Pexels 1633602 (autor: Mike Bird) — https://www.pexels.com/photo/1633602/
-    // 2) Pexels 5233285 (autor: Khunkorn Laowisit) — https://www.pexels.com/photo/5233285/
-    // 3) Pexels 5233264 (autor: Khunkorn Laowisit) — https://www.pexels.com/photo/5233264/
-    // 4) Unsplash photo-1771491237218-cbd4a707497e (autor: Luay Barani, ořez) —
-    //    https://unsplash.com/photos/5SmPnmCjwcU
-    // 5) Unsplash photo-1682858110563-3f609263d418 (autor: Igor Constantino) —
-    //    https://unsplash.com/photos/jBL6jiMgwlM
+    // Reálné fotky klienta před a po čištění, páry oříznuté na stejný výřez.
     cover: {
-      src: "/images/cisteni-interieru/01.webp",
-      alt: "Čistý světlý kožený interiér vozu po kompletním čištění",
-      temporary: true,
+      src: "/images/cisteni-interieru/cover-pred-po.webp",
+      alt: "Rádio a ovládání klimatizace před a po čištění interiéru",
     },
-    photos: [
+    photos: [],
+    beforeAfter: [
       {
-        src: "/images/cisteni-interieru/01.webp",
-        alt: "Čistý světlý kožený interiér vozu po kompletním čištění",
-        temporary: true,
+        before: "/images/cisteni-interieru/radio-pred.webp",
+        after: "/images/cisteni-interieru/radio-po.webp",
+        alt: "rádio Panasonic a ovládání klimatizace",
       },
       {
-        src: "/images/cisteni-interieru/02.webp",
-        alt: "Tepování látkového sedadla extrakční hubicí",
-        temporary: true,
+        before: "/images/cisteni-interieru/palubni-deska-pred.webp",
+        after: "/images/cisteni-interieru/palubni-deska-po.webp",
+        alt: "palubní deska s větrákem a budíky",
       },
       {
-        src: "/images/cisteni-interieru/03.webp",
-        alt: "Hloubkové čištění koberce v interiéru vozu",
-        temporary: true,
+        before: "/images/cisteni-interieru/tunel-pred.webp",
+        after: "/images/cisteni-interieru/tunel-po.webp",
+        alt: "středový tunel s řadicí pákou a ruční brzdou",
       },
       {
-        src: "/images/cisteni-interieru/04.webp",
-        alt: "Čištění palubní desky detailingovým štětcem",
-        temporary: true,
+        before: "/images/cisteni-interieru/sedadlo-pred.webp",
+        after: "/images/cisteni-interieru/sedadlo-po.webp",
+        alt: "látkové sedadlo řidiče",
       },
       {
-        src: "/images/cisteni-interieru/05.webp",
-        alt: "Detail kožených sedadel a středového tunelu po úpravě",
-        temporary: true,
+        before: "/images/cisteni-interieru/dvere-pred.webp",
+        after: "/images/cisteni-interieru/dvere-po.webp",
+        alt: "výplň dveří s ovladačem zrcátek",
+      },
+      {
+        before: "/images/cisteni-interieru/koberec-pred.webp",
+        after: "/images/cisteni-interieru/koberec-po.webp",
+        alt: "koberec u pedálů",
+      },
+      {
+        before: "/images/cisteni-interieru/packa-sedadla-pred.webp",
+        after: "/images/cisteni-interieru/packa-sedadla-po.webp",
+        alt: "páčka nastavení sedadla u prahu",
+      },
+      {
+        before: "/images/cisteni-interieru/kufr-uchyty-pred.webp",
+        after: "/images/cisteni-interieru/kufr-uchyty-po.webp",
+        alt: "úchyty zadních sedadel v kufru",
+      },
+      {
+        before: "/images/cisteni-interieru/kufr-bocnice-pred.webp",
+        after: "/images/cisteni-interieru/kufr-bocnice-po.webp",
+        alt: "bočnice kufru a zadní sedadlo",
       },
     ],
   },
