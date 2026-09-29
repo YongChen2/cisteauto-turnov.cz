@@ -7,7 +7,8 @@ const nextConfig: NextConfig = {
     // Source photos are at most 1600 px wide, so larger variants would only duplicate them.
     deviceSizes: [640, 750, 828, 1080, 1200, 1600],
     imageSizes: [96, 128, 256, 384, 480],
-    qualities: [75],
+    // 75 for photos, 90 for hand-picked card thumbnails (ServicePhoto.quality).
+    qualities: [75, 90],
     // Optimized variants are immutable per source file; keep them cached for 30 days.
     minimumCacheTTL: 60 * 60 * 24 * 30,
   },

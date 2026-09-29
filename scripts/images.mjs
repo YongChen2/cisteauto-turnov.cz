@@ -18,6 +18,8 @@ const MAX_BYTES = 250 * 1024;
 const FALLBACK_QUALITIES = [72, 66, 60];
 // Client's original logo upload, kept only as a source file.
 const SKIP = new Set(["logo.jpeg"]);
+// Card thumbnails exported deliberately at high quality (q90) — never re-compress them.
+const KEEP_QUALITY = /-karta\.webp$/;
 
 async function walk(dir) {
   const out = [];
@@ -31,6 +33,7 @@ async function walk(dir) {
 
 async function optimize(file) {
   const input = await readFile(file);
+  if (KEEP_QUALITY.test(file)) return { before: input.length, after: input.length };
   // Already-optimized files are left alone, so re-running never re-compresses a photo twice.
   const info = await sharp(input).metadata();
   const hasMetadata = Boolean(info.exif || info.icc || info.xmp || info.iptc);

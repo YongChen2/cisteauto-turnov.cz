@@ -2,6 +2,10 @@ export type ServicePhoto = {
   src: string;
   /** popisný alt text (česky); bez něj se použije "Služba — fotografie X z Y" */
   alt?: string;
+  /** kvalita next/image (musí být v images.qualities v next.config.ts), jinak výchozí 75 */
+  quality?: number;
+  /** CSS object-position ořezu v kartě, např. "50% 40%" (výchozí střed) */
+  objectPosition?: string;
   /** true = dočasná fotka (Unsplash), nahradit reálnou fotkou klienta */
   temporary?: boolean;
   /** nastaveno jen u malých reálných fotek, které se nesmí roztahovat na výšku kontejneru */
@@ -26,7 +30,7 @@ export type Service = {
   highlights?: string[];
   /** cenové varianty vypsané v modalu (musí odpovídat ceníku /cenik) */
   priceVariants?: { label: string; price: string }[];
-  /** fotka na kartě služby */
+  /** náhled na kartě služby; může být samostatná fotka mimo galerii */
   cover: ServicePhoto;
   /** fotky v modal galerii (u služby s páry před/po zůstává prázdné) */
   photos: ServicePhoto[];
@@ -158,11 +162,13 @@ export const services: Service[] = [
       "Ochrana proti UV záření a chemii",
       "Vydrží až 5 let při správné údržbě",
     ],
-    // Reálné fotky klienta (SPZ a odrazy osob rozmazané).
+    // Náhled karty: samostatná fotka ve vysoké kvalitě (není v galerii).
     cover: {
-      src: "/images/keramicka-ochrana-laku/01.webp",
-      alt: "Aplikace keramické ochrany: přípravek kape na aplikátor nad červeným lakem",
+      src: "/images/keramicka-ochrana-laku/keramika-karta.webp",
+      alt: "Aplikace keramické ochrany: přípravek stéká na aplikační houbičku nad červeným lakem",
+      quality: 90,
     },
+    // Galerie: reálné fotky klienta (SPZ a odrazy osob rozmazané).
     photos: [
       {
         src: "/images/keramicka-ochrana-laku/01.webp",

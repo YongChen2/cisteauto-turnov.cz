@@ -28,9 +28,11 @@ function ServiceCard({ service, onOpen }: ServiceCardProps) {
           src={service.cover.src}
           alt={service.cover.alt ?? service.name}
           fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
+          quality={service.cover.quality}
           {...blurProps(service.cover.src)}
           className="object-cover transition duration-500 group-hover:scale-105"
+          style={service.cover.objectPosition ? { objectPosition: service.cover.objectPosition } : undefined}
         />
       </div>
       <div className="flex flex-1 flex-col gap-2 p-5">
