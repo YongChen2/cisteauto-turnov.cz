@@ -1,25 +1,37 @@
+import { memo } from "react";
 import Image from "next/image";
 import type { Service } from "@/data/services";
+import { blurProps } from "@/lib/image-meta";
+import { loadGalleryModal, preloadGalleryPhoto } from "@/lib/gallery";
 
 type ServiceCardProps = {
   service: Service;
-  onOpen: () => void;
+  onOpen: (slug: string) => void;
 };
 
-export default function ServiceCard({ service, onOpen }: ServiceCardProps) {
+function ServiceCard({ service, onOpen }: ServiceCardProps) {
+  // Intent to open (hover, keyboard focus, touch) warms the gallery code and its first photo.
+  const warmUp = () => {
+    void loadGalleryModal();
+    preloadGalleryPhoto(service.photos[0]);
+  };
+
   return (
     <button
       type="button"
-      onClick={onOpen}
-      className="group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] text-left transition hover:border-accent/60 hover:bg-white/[0.06] hover:shadow-accent-glow focus-visible:border-accent/60 cursor-pointer"
+      onClick={() => onOpen(service.slug)}
+      onPointerEnter={warmUp}
+      onFocus={warmUp}
+      onTouchStart={warmUp}
+      className="group flex cursor-pointer flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] text-left transition hover:border-accent/60 hover:bg-white/[0.06] hover:shadow-accent-glow focus-visible:border-accent/60"
     >
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-neutral-900">
         <Image
           src={service.cover.src}
           alt={service.cover.alt ?? service.name}
           fill
-          loading="lazy"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px"
+          {...blurProps(service.cover.src)}
           className="object-cover transition duration-500 group-hover:scale-105"
         />
       </div>
@@ -31,3 +43,5 @@ export default function ServiceCard({ service, onOpen }: ServiceCardProps) {
     </button>
   );
 }
+
+export default memo(ServiceCard);

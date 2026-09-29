@@ -12,7 +12,7 @@ export default function Header() {
             alt={site.logo.alt}
             width={site.logo.width}
             height={site.logo.height}
-            priority
+            loading="eager"
             sizes="120px"
             className="h-8 w-auto sm:h-10"
           />

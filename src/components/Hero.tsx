@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { site } from "@/data/site";
+import { blurProps } from "@/lib/image-meta";
 
 export default function Hero() {
   return (
@@ -9,8 +10,10 @@ export default function Hero() {
           src="/images/hero/hero.webp"
           alt=""
           fill
-          priority
+          loading="eager"
+          fetchPriority="high"
           sizes="100vw"
+          {...blurProps("/images/hero/hero.webp")}
           className="object-cover object-center opacity-70"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-neutral-950/40" />
@@ -29,7 +32,7 @@ export default function Hero() {
             alt={site.logo.alt}
             width={site.logo.width}
             height={site.logo.height}
-            priority
+            loading="eager"
             sizes="(max-width: 640px) 288px, 448px"
             className="relative h-auto w-72 sm:w-[28rem]"
           />

@@ -1,13 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import {
-  contactSchema,
-  parseContactFormData,
-  serviceOptions,
-  type ContactFormValues,
-} from "@/lib/contact-schema";
+import type { ContactFormValues } from "@/lib/contact-schema";
+import { serviceOptions } from "@/lib/service-options";
 import { site } from "@/data/site";
+
+const loadSchema = () => import("@/lib/contact-schema");
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 type FieldErrors = Partial<Record<keyof ContactFormValues, string>>;
@@ -79,6 +77,8 @@ export default function ContactForm() {
     const honeypot = String(formData.get("_honey") ?? "");
     const elapsed = Date.now() - startedAtRef.current;
 
+    // zod is loaded on demand (warmed on first focus) to keep it out of the initial page JS.
+    const { contactSchema, parseContactFormData } = await loadSchema();
     const result = contactSchema.safeParse(parseContactFormData(formData));
     if (!result.success) {
       const nextErrors: FieldErrors = {};
@@ -172,6 +172,7 @@ export default function ContactForm() {
         ref={formRef}
         key={formKey}
         onSubmit={handleSubmit}
+        onFocusCapture={() => void loadSchema()}
         noValidate
         className="mt-6 flex flex-col gap-1"
       >

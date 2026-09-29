@@ -1,10 +1,7 @@
 import { z } from "zod";
-import { services } from "@/data/services";
+import { serviceOptions } from "@/lib/service-options";
 
-export const serviceOptions = [
-  ...services.map((s) => ({ value: s.slug, label: s.name })),
-  { value: "jine", label: "Jiné / více služeb" },
-];
+export { serviceOptions };
 
 const allowedServiceValues = serviceOptions.map((o) => o.value) as [string, ...string[]];
 

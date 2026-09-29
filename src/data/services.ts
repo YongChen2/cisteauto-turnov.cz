@@ -35,12 +35,12 @@ export const services: Service[] = [
     // Reálné fotky z realizací klienta (nízké rozlišení 282×212 px z původního webu) — zobrazovat
     // v přirozené velikosti, nezvětšovat.
     photos: [
-      { src: "/images/cisteni-interieru/01.jpg", natural: { width: 282, height: 212 } },
-      { src: "/images/cisteni-interieru/02.jpg", natural: { width: 282, height: 212 } },
-      { src: "/images/cisteni-interieru/03.jpg", natural: { width: 282, height: 212 } },
-      { src: "/images/cisteni-interieru/04.jpg", natural: { width: 282, height: 212 } },
-      { src: "/images/cisteni-interieru/05.jpg", natural: { width: 282, height: 212 } },
-      { src: "/images/cisteni-interieru/06.jpg", natural: { width: 282, height: 212 } },
+      { src: "/images/cisteni-interieru/01.webp", natural: { width: 282, height: 212 } },
+      { src: "/images/cisteni-interieru/02.webp", natural: { width: 282, height: 212 } },
+      { src: "/images/cisteni-interieru/03.webp", natural: { width: 282, height: 212 } },
+      { src: "/images/cisteni-interieru/04.webp", natural: { width: 282, height: 212 } },
+      { src: "/images/cisteni-interieru/05.webp", natural: { width: 282, height: 212 } },
+      { src: "/images/cisteni-interieru/06.webp", natural: { width: 282, height: 212 } },
     ],
   },
   {

@@ -1,14 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useState } from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { services } from "@/data/services";
 import ServiceCard from "@/components/ServiceCard";
-import GalleryModal from "@/components/GalleryModal";
+import { loadGalleryModal } from "@/lib/gallery";
+
+// Gallery code is fetched on first hover/focus of a card (see ServiceCard), not with the page.
+const GalleryModal = dynamic(loadGalleryModal, { ssr: false });
 
 export default function ServicesSection() {
   const [openSlug, setOpenSlug] = useState<string | null>(null);
   const openService = services.find((s) => s.slug === openSlug) ?? null;
+  const handleOpen = useCallback((slug: string) => setOpenSlug(slug), []);
+  const handleClose = useCallback(() => setOpenSlug(null), []);
 
   return (
     <section id="sluzby" className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
@@ -21,7 +27,7 @@ export default function ServicesSection() {
 
       <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {services.map((service) => (
-          <ServiceCard key={service.slug} service={service} onOpen={() => setOpenSlug(service.slug)} />
+          <ServiceCard key={service.slug} service={service} onOpen={handleOpen} />
         ))}
       </div>
 
@@ -34,7 +40,7 @@ export default function ServicesSection() {
         </Link>
       </div>
 
-      {openService && <GalleryModal service={openService} onClose={() => setOpenSlug(null)} />}
+      {openService && <GalleryModal service={openService} onClose={handleClose} />}
     </section>
   );
 }

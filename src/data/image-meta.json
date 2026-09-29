@@ -1,0 +1,147 @@
+{
+  "/images/cisteni-interieru/00-cover.webp": {
+    "width": 1600,
+    "height": 2133,
+    "blurDataURL": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAACQAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JaQATwADjRPp5AYLQAP7c8UHSlZQQ7aKZoldceSYL0R/KoDGaAfw3d6qv1kAtcOCKvdObzw7hpMm/7ME+yjN6K468HwTurFx/YQ7th5s547rVTqr67kkZlCdZIm1CNzT2g4AA"
+  },
+  "/images/cisteni-interieru/01.webp": {
+    "width": 282,
+    "height": 212,
+    "blurDataURL": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADwAQCdASoQAAwAA4BaJZwAAuY6GDRWJgAA/umvw35J4L6x5Bc7e9tNqjtB+A7xFd78SgS7l/vTv9KFQ/OJYQAA"
+  },
+  "/images/cisteni-interieru/02.webp": {
+    "width": 282,
+    "height": 212,
+    "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADwAQCdASoQAAwAA4BaJZwAAwF6DQZArRAA/h/aOrBM2/EIb1Vb/hQwYGGgtw+nCBSAqQNbCVm55VmFgqmyejIrO2pte2Bq5W3pAAAA"
+  },
+  "/images/cisteni-interieru/03.webp": {
+    "width": 282,
+    "height": 212,
+    "blurDataURL": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADQAQCdASoQAAwAA4BaJaQAAsfcPTzqAAD+66ra38ATMxeoVLc7oGKhzEDqyYxrF6X43qKuxlamkz+1SXFWpLsWJAAAAA=="
+  },
+  "/images/cisteni-interieru/04.webp": {
+    "width": 282,
+    "height": 212,
+    "blurDataURL": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADwAQCdASoQAAwAA4BaJaQAAscpwPnScwAA/kqA41X8tpiSJ5d0b5MIDajhhZ8lIqdoq9nreZuG9PQA"
+  },
+  "/images/cisteni-interieru/05.webp": {
+    "width": 282,
+    "height": 212,
+    "blurDataURL": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADQAQCdASoQAAwAA4BaJaQAApxWr5kmAAD+284Y/tNCtU2YfJYE6HXcQN7dAFyHJtZeQ3O8yjlGvMITrjgAAA=="
+  },
+  "/images/cisteni-interieru/06.webp": {
+    "width": 282,
+    "height": 212,
+    "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADQAQCdASoQAAwAA4BaJaQAAlXoDI1KAADLSreWIWKHqb6Bot8yx3kl4OPDVVjfcvObCSy102puWhhOrgEDc5MnFncZZqHhVDTjZUf9iNQQoi/GgAA="
+  },
+  "/images/cisteni-klimatizace-ozonem/01.webp": {
+    "width": 1600,
+    "height": 1067,
+    "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAQAgCdASoQAAsAA4BaJZwAAuySLKqh3bAAAP7zMMkaA330qxx2SFWq4BGmPpKrRoaK4neP6z2IF6YEMeL9Ez9hFhvphcoQAAA="
+  },
+  "/images/cisteni-klimatizace-ozonem/02.webp": {
+    "width": 1600,
+    "height": 1067,
+    "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAABQAgCdASoQAAsAA4BaJZwAD4qQOGUjPNVzsAAA4nhlSnQcz+j5ncghkA+1JjH5LyPFAU7Vmkkjv/LsR+Qxljn0Y4ifb1K8fkamUOVBlS/v8Me2jeB93o1HMkcYI600MCAAAA=="
+  },
+  "/images/cisteni-klimatizace-ozonem/03.webp": {
+    "width": 1600,
+    "height": 1067,
+    "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAQAgCdASoQAAsAA4BaJZQC7AEQIaJpE7oEAP6+i8QVj6dbcP5ASOK1h/Krfiw0NANBAG0LaQ9lTktPV2aHvOxdmUTDGpYLFe8cujjDC1a0g0CJ/USTY6HgAAA="
+  },
+  "/images/dekarbonizace-motoru/01.webp": {
+    "width": 1600,
+    "height": 1086,
+    "blurDataURL": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADQAQCdASoQAAsAA4BaJQAB8KkEEcnOKAD+zd71mxn+FBI3XfaS+ze4ECna1n3YZMjhJGn9Dv6XrVQWOYGwJEig7P0N5CWqTdPjUGzeuKpgnfFt5E0ranBHO0up80AA"
+  },
+  "/images/dekarbonizace-motoru/02.webp": {
+    "width": 1600,
+    "height": 1067,
+    "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAQCdASoQAAsAA4BaJZQAAmsNVEvqFaAA/uoARgAVormYsNsEp5M9tUf5e6tdI/xenoFn3O7EDOVWCCMRI7rwnp+OHX+XPE66G4mgB1OK1F7rAAA="
+  },
+  "/images/dekarbonizace-motoru/03.webp": {
+    "width": 1600,
+    "height": 2240,
+    "blurDataURL": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAAAQBACdASoQABYAPu1iqU2ppaOiMAgBMB2JZwAD5Gn1hpb/zNU2r2QKwAD+zgEZXH7ffPSQ1eA/JgS6f84rXXL9A/pPng1Qjg2V0qjiBusfflJRmRmplM8hxdbIOwD4R+b33ftHQGdOKbVjiDTcTyQufelTaerpwwxk5EJTPUjiBREk72gDZXfVtgA="
+  },
+  "/images/dekarbonizace-motoru/04.webp": {
+    "width": 1600,
+    "height": 1067,
+    "blurDataURL": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAABwAgCdASoQAAsAA4BaJaACdAYrJy50BvRQqyIAAP6jTSCgtoYWE4zWcrk/aTWfMIZ+A+1ZWmwqP+PkliX+hV3JnAp5ChnMORaNx/SIYmB+nULb01AfHNAPRAJpzRLL0HVYBi4pJyctoA++bV4TLIAA"
+  },
+  "/images/hero/hero.webp": {
+    "width": 1600,
+    "height": 2849,
+    "blurDataURL": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAACwAgCdASoQABwAPu1iqU2ppaQiMAgBMB2JaQAAeyAA/vD/X0VFxLurbjYwbKgAAAA="
+  },
+  "/images/keramicka-ochrana-laku/01.webp": {
+    "width": 1600,
+    "height": 1067,
+    "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAACwAQCdASoQAAsAA4BaJQAAS67cC9kAAP73zlIqF4/A80dscYTsIZK2L0zO/Gk1R/fdp6Rzzjan3QtLf5CF5fLVyKPrHIrCZy4NP4S7AAA="
+  },
+  "/images/keramicka-ochrana-laku/02.webp": {
+    "width": 1600,
+    "height": 2133,
+    "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAAAQBACdASoQABUAPu1iqk2ppaQiMAgBMB2JZwDG9CG+7n+eLb+FTsOyAAD8f0YuDIK9EbaDvnMNFjkdKf6OPby4bPKWID1gYHi0gMlYoZ21swXSEIAAAA=="
+  },
+  "/images/keramicka-ochrana-laku/03.webp": {
+    "width": 1600,
+    "height": 1067,
+    "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAAAQAgCdASoQAAsAA4BaJbACdAEeqr4h1BvgAP6qBsyBY96ZFhdnFoi9/YGgwHanzPPJgppi3b7ZLSsYCy+7s1JeIWj6+yGUUnQAAA=="
+  },
+  "/images/keramicka-ochrana-laku/04.webp": {
+    "width": 1600,
+    "height": 2400,
+    "blurDataURL": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAAAwBACdASoQABgAPu1iqU2ppaOiMAgBMB2JagBTAAY4uGTUxEIlfj44G0AA/vDe2mzSCpveSnRHj4dBc5dAWgnfHJ4d/CJSjFzZbeUlGrLKbjp+Q/KS5UaxX/vw/icwEbOdLDqTFSohOkXNLEOr/P7ac4tjRXDZ6AkfsmVhc5EkARRPHf0Up/d8k+VQ06lKh7uidcAPEAA="
+  },
+  "/images/lesteni-laku/01.webp": {
+    "width": 1600,
+    "height": 1067,
+    "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAQCdASoQAAsAA4BaJZQAAxUhX6Ba7+AA/u+neAAbXqw6asSeKdnuIrYV9b0q5nxS4nMiBJ1MgrkQ56u1HYrjpezemLP7yNyM+tFvHN2ZyXhwAAA="
+  },
+  "/images/lesteni-laku/02.webp": {
+    "width": 1600,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAAAQAgCdASoQAAwAA4BaJQBYdiHQVvt2DMwAAP7zOIEwHW7ZHkcRxoVfhTkgekTwxXVXiE2a32iEQdsYiw13rRf1wyJGpvFvvsJTIuaVrVQy2zrSAAA="
+  },
+  "/images/lesteni-laku/03.webp": {
+    "width": 1600,
+    "height": 1067,
+    "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAAAQAgCdASoQAAsAA4BaJZQCdADw1v1RkjAAAP70NYww1c8q/afn22Mkq/ilaQqoFt1Rn3l1D9akqF+AVHHEYdmiBAoKMW//GdAAAA=="
+  },
+  "/images/lesteni-laku/04.webp": {
+    "width": 1600,
+    "height": 1067,
+    "blurDataURL": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAAAwAgCdASoQAAsAA4BaJYwATgA2NLFJXoTAaAD+ypQhtS+CqQCe8VzJ9nAW+ejylelAkWDKyyxKV7+ZFIUH4IHWPW86w7DVMXeIzwaCPJfeTTMeLRjsOk6/B5JAQrDFkbqnPcDQAAA="
+  },
+  "/images/logo-dark.png": {
+    "width": 1438,
+    "height": 483,
+    "blurDataURL": "data:image/webp;base64,UklGRsoAAABXRUJQVlA4WAoAAAAQAAAADwAABAAAQUxQSFEAAAAAAAAAABZHRT1HQ0NAHQcMCQUwRC5NITl5Rm23XBlQbVJDTEUcAAK/tpO3viQnSUZAGAAKXWybn5lWtGMAAwAfLgISG0taPyQ0Ehk6MTAPDwsAVlA4IFIAAACwAQCdASoQAAUAA4BaJbACdAEGhmlgAP75FGNpVFVyfMWbKM8o5drkKZA9BzV/4d1CGxv0HZZEyCZX8x70sXgw9f6ZPrOc6Z3hKF8dQXDZAAAA"
+  },
+  "/images/logo-light.png": {
+    "width": 1438,
+    "height": 483,
+    "blurDataURL": "data:image/webp;base64,UklGRuAAAABXRUJQVlA4WAoAAAAQAAAADwAABAAAQUxQSFEAAAAAAAAAABZHRD1HQ0NAHQcMCQUwRC5OITl5Rm23XBlQbVJDTEUcAAO/tpK3viQnSUZAGAAKXmybn5hWtGMAAwAfLgISG0taPyQ0Ehk6MTAPDwsAVlA4IGgAAADQAQCdASoQAAUAA4BaJbACdADpzFe5wAD+9QLEG8W2fQfDbZnmjpd+n8OeUQAT7wa+vhnzNfzPC54gXkhJJPmzUdZBf/BqmISUsqP7hPSyCZX8x70sXDvwfpKP7Jp3iau13hsgv2HAAA=="
+  },
+  "/images/ppf-folie/01.webp": {
+    "width": 1600,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAACwAgCdASoQAAwAA4BaJaACdH8AgrTFY2jnKux9dsAA/ua2INurXRPx2H/aJlf8I3mHLQ1ecL0bakNTFmzG8B3L3PDJ2ZvFQ9t5r6DMJkcX6v9YPhzskkZbE96x7REdNM6YHqBz3YAAAA=="
+  },
+  "/images/ppf-folie/02.webp": {
+    "width": 1350,
+    "height": 1012,
+    "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADwAQCdASoQAAwAA4BaJZwAAvxVNSvilFAAzaZmQaaUaz8DRXbQ98KQyZvWUvLEJa4crsplJ2sa6msdwcNHA/ex85ekuoaoyTNnyRCgAAA="
+  },
+  "/images/ppf-folie/03.webp": {
+    "width": 1600,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAADQAQCdASoQAAwAA4BaJYwAD4/HcOXdMAD+3hqjILRYKflEiHTAhSPx6Hhsmk7FSTfkcKfqFhGTVjWfyZV1Z4u7Xm+4Jp2+gbkiEml5bbIDfHpt9KzKe27J3LQnu/p0nyHW4X1UMZAAAA=="
+  },
+  "/images/ppf-folie/04.webp": {
+    "width": 1600,
+    "height": 1067,
+    "blurDataURL": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAAAQAgCdASoQAAsAA4BaJbACdAEREHuovkgAAP707y8fc5lovZDG1X0Mxz1x01hhAjo79V6Lr91JmVKQb8HwS7d3rmxb1To1wH0TKHO9ap0S0qo6l2WkYlRXyNss0QR49S58BCHR/TQYZx4yk6VEa68CAAA="
+  }
+}
