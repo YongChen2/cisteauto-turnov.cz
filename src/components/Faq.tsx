@@ -9,6 +9,11 @@ const faqs = [
     answer: "Při dodržení doporučené údržby vydrží keramická ochrana až 5 let. Konkrétní postup péče vám rádi vysvětlíme při předání vozu.",
   },
   {
+    question: "Ošetříte i motorku nebo starší auto?",
+    answer:
+      "Ano. Keramickou ochranu i další služby děláme na motocykly, veterány i starší vozy. Postup vždy přizpůsobíme stavu laku, rádi vše probereme po telefonu.",
+  },
+  {
     question: "Je nutné se předem objednat?",
     answer:
       "Ano, ozvěte se prosím předem telefonicky nebo e-mailem — konkrétní volný termín si domluvíme podle vašich možností.",

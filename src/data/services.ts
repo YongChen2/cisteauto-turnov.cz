@@ -149,7 +149,7 @@ export const services: Service[] = [
     shortDescription:
       "Keramická ochrana dodá laku hluboký lesk a vytvoří odolnou vrstvu proti nečistotám, UV záření a chemii. Při správné údržbě vydrží až 5 let.",
     description:
-      "Nanokeramická vrstva se pevně spojí s lakem a chrání ho před povětrnostními vlivy, UV zářením a chemickým znečištěním. Před aplikací lak vždy důkladně umyjeme, odmastíme a vyleštíme, aby ochrana držela co nejdéle.",
+      "Nanokeramická vrstva se pevně spojí s lakem a chrání ho před povětrnostními vlivy, UV zářením a chemickým znečištěním. Před aplikací lak vždy důkladně umyjeme, odmastíme a vyleštíme, aby ochrana držela co nejdéle. Keramickou ochranu aplikujeme na osobní auta, SUV, luxusní vozy, veterány i motocykly.",
     price: "od 5 000 Kč",
     priceVariants: [
       { label: "Keramická ochrana laku", price: "5 000 Kč" },
