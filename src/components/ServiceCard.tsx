@@ -16,7 +16,7 @@ export default function ServiceCard({ service, onOpen }: ServiceCardProps) {
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-neutral-900">
         <Image
           src={service.cover.src}
-          alt={service.name}
+          alt={service.cover.alt ?? service.name}
           fill
           loading="lazy"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

@@ -115,7 +115,7 @@ export default function GalleryModal({ service, onClose }: GalleryModalProps) {
           {photos[index].natural ? (
             <Image
               src={photos[index].src}
-              alt={`${service.name} — fotografie ${index + 1} z ${photos.length}`}
+              alt={photos[index].alt ?? `${service.name} — fotografie ${index + 1} z ${photos.length}`}
               width={photos[index].natural.width}
               height={photos[index].natural.height}
               className="max-w-none"
@@ -123,7 +123,7 @@ export default function GalleryModal({ service, onClose }: GalleryModalProps) {
           ) : (
             <Image
               src={photos[index].src}
-              alt={`${service.name} — fotografie ${index + 1} z ${photos.length}`}
+              alt={photos[index].alt ?? `${service.name} — fotografie ${index + 1} z ${photos.length}`}
               fill
               sizes="(max-width: 768px) 100vw, 768px"
               className="object-contain"
