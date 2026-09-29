@@ -66,9 +66,9 @@ export const services: Service[] = [
     slug: "keramicka-ochrana-laku",
     name: "Keramická ochrana laku",
     shortDescription:
-      "Dlouhodobá ochrana laku před UV zářením, ptačím trusem a drobnými nečistotami — vydrží až 3 roky při správné údržbě.",
+      "Dlouhodobá ochrana laku před UV zářením, ptačím trusem a drobnými nečistotami — vydrží až 5 let při dodržení doporučené údržby.",
     description:
-      "Nanokeramická vrstva chrání lak před povětrnostními vlivy, UV zářením a chemickým znečištěním, usnadňuje mytí a prodlužuje lesk laku. Před aplikací lak vždy připravíme leštěním. Ochrana vydrží až 3 roky při správné údržbě.",
+      "Nanokeramická vrstva chrání lak před povětrnostními vlivy, UV zářením a chemickým znečištěním, usnadňuje mytí a prodlužuje lesk laku. Před aplikací lak vždy připravíme leštěním. Ochrana vydrží až 5 let při dodržení doporučené údržby.",
     price: "5 000 Kč (MPV/SUV 6 000 Kč)",
     // Dočasné fotky, Unsplash (licence umožňuje komerční použití), nahradit fotkami z vlastní dílny:
     // 1) photo-1632605166776-7128669886e7 — https://unsplash.com/photos/rsaYn6mq2qo

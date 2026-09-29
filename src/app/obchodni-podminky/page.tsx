@@ -5,7 +5,7 @@ import LegalPage, { LegalSection, Todo, legalLinkClass } from "@/components/Lega
 export const metadata: Metadata = {
   title: `Obchodní podmínky — ${site.name}`,
   description:
-    "Obchodní podmínky pro objednávku a poskytování služeb autodetailingu Čisté auto Turnov — objednávka, cena, platba, převzetí vozu a reklamace.",
+    "Obchodní podmínky pro objednávku a poskytování služeb autodetailingu JR Detailing – Čisté auto Turnov — objednávka, cena, platba, převzetí vozu a reklamace.",
   alternates: { canonical: "/obchodni-podminky" },
 };
 
@@ -61,7 +61,7 @@ export default function TermsPage() {
 
       <LegalSection title="4. Platba">
         <p>
-          Způsob a termín platby: <Todo>ZPŮSOB PLATBY</Todo>
+          Způsob a termín platby: Cenu služby lze uhradit při převzetí vozu v hotovosti, platební kartou nebo převodem pomocí QR kódu.
         </p>
       </LegalSection>
 

@@ -35,6 +35,39 @@ const other: PriceItem[] = [
   { name: "Čištění klimatizace ozónem", price: "300 Kč" },
 ];
 
+const paymentMethods = [
+  {
+    label: "Hotově",
+    icon: (
+      <>
+        <rect x="2.5" y="6" width="19" height="12" rx="2" />
+        <circle cx="12" cy="12" r="2.5" />
+        <path d="M6 9.5v.01M18 14.5v.01" />
+      </>
+    ),
+  },
+  {
+    label: "Kartou",
+    icon: (
+      <>
+        <rect x="2.5" y="5" width="19" height="14" rx="2" />
+        <path d="M2.5 10h19M6.5 15h3" />
+      </>
+    ),
+  },
+  {
+    label: "QR kód",
+    icon: (
+      <>
+        <rect x="3.5" y="3.5" width="6" height="6" rx="1" />
+        <rect x="14.5" y="3.5" width="6" height="6" rx="1" />
+        <rect x="3.5" y="14.5" width="6" height="6" rx="1" />
+        <path d="M14.5 14.5h2.5v2.5M20.5 14.5v.01M14.5 20.5h.01M17.5 20.5h3v-3" />
+      </>
+    ),
+  },
+];
+
 export default function PriceListPage() {
   return (
     <>
@@ -65,6 +98,29 @@ export default function PriceListPage() {
           Uvedené ceny jsou orientační. Konečná cena se může lišit podle stavu a velikosti vozu —
           přesnou cenu vám rádi upřesníme po telefonu.
         </p>
+
+        <ul
+          aria-label="Způsoby platby"
+          className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-white/70"
+        >
+          {paymentMethods.map((method) => (
+            <li key={method.label} className="flex items-center gap-2">
+              <svg
+                viewBox="0 0 24 24"
+                className="h-5 w-5 text-accent-text"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                {method.icon}
+              </svg>
+              {method.label}
+            </li>
+          ))}
+        </ul>
 
         <div className="mt-8 flex flex-wrap gap-4">
           <a
