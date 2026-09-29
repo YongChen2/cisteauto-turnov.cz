@@ -171,10 +171,6 @@ export const services: Service[] = [
     // Galerie: reálné fotky klienta (SPZ a odrazy osob rozmazané).
     photos: [
       {
-        src: "/images/keramicka-ochrana-laku/01.webp",
-        alt: "Aplikace keramické ochrany: přípravek kape na aplikátor nad červeným lakem",
-      },
-      {
         src: "/images/keramicka-ochrana-laku/02.webp",
         alt: "Černý VW Tiguan s lesklým lakem po keramické ochraně",
       },
