@@ -14,6 +14,8 @@ export type Service = {
   shortDescription: string;
   description: string;
   price: string;
+  /** krátké body výhod zobrazené v modalu pod galerií */
+  highlights?: string[];
   /** fotka na kartě služby */
   cover: ServicePhoto;
   /** fotky v modal galerii */
@@ -89,21 +91,49 @@ export const services: Service[] = [
     slug: "keramicka-ochrana-laku",
     name: "Keramická ochrana laku",
     shortDescription:
-      "Dlouhodobá ochrana laku před UV zářením, ptačím trusem a drobnými nečistotami — vydrží až 5 let při dodržení doporučené údržby.",
+      "Keramická ochrana dodá laku hluboký lesk a vytvoří odolnou vrstvu proti nečistotám, UV záření a chemii. Při správné údržbě vydrží až 5 let.",
     description:
-      "Nanokeramická vrstva chrání lak před povětrnostními vlivy, UV zářením a chemickým znečištěním, usnadňuje mytí a prodlužuje lesk laku. Před aplikací lak vždy připravíme leštěním. Ochrana vydrží až 5 let při dodržení doporučené údržby.",
-    price: "5 000 Kč (MPV/SUV 6 000 Kč)",
-    // Dočasné fotky, Unsplash (licence umožňuje komerční použití), nahradit fotkami z vlastní dílny:
-    // 1) photo-1632605166776-7128669886e7 — https://unsplash.com/photos/rsaYn6mq2qo
-    // 2) photo-1780586585338-c56fe47b49f4 (autor: Vitalii Abakumov) — https://unsplash.com/photos/tbHzrVqZzbA
-    // 3) photo-1788581171198-64553b09c8cf (autor: Rana Singh) — https://unsplash.com/photos/blJD_KPBna8
-    // 4) photo-1761934658331-2e00b20dc6c6 — https://unsplash.com/photos/bDBiGYkr3h8
-    cover: { src: "/images/keramicka-ochrana-laku/01.webp", temporary: true },
+      "Nanokeramická vrstva se pevně spojí s lakem a chrání ho před povětrnostními vlivy, UV zářením a chemickým znečištěním. Před aplikací lak vždy důkladně umyjeme, odmastíme a vyleštíme, aby ochrana držela co nejdéle.",
+    price: "5 000 Kč, MPV/SUV 6 000 Kč",
+    highlights: [
+      "Hluboký lesk laku",
+      "Voda a nečistoty stékají — snadnější mytí",
+      "Ochrana proti UV záření a chemii",
+      "Vydrží až 5 let při správné údržbě",
+    ],
+    // Dočasné fotky (licence umožňuje komerční použití), bez obličejů a log, nahradit fotkami
+    // z vlastní dílny:
+    // 1) Unsplash photo-1652898072202-5084dc85b850 (autor: Vladyslav Lytvyshchenko, ořez na 4:3) —
+    //    https://unsplash.com/photos/9-muyFk7RC4
+    // 2) Pexels 14615260 (autor: Dextar Studio) — https://www.pexels.com/photo/14615260/
+    // 3) Unsplash photo-1780586585338-c56fe47b49f4 (autor: Vitalii Abakumov) — https://unsplash.com/photos/tbHzrVqZzbA
+    // 4) Unsplash photo-1773236321529-fe13541e95f2 (autor: atelierbyvineeth) — https://unsplash.com/photos/lFDWY0SbTSA
+    cover: {
+      src: "/images/keramicka-ochrana-laku/01.webp",
+      alt: "Aplikace keramické ochrany laku aplikační houbičkou",
+      temporary: true,
+    },
     photos: [
-      { src: "/images/keramicka-ochrana-laku/01.webp", temporary: true },
-      { src: "/images/keramicka-ochrana-laku/02.webp", temporary: true },
-      { src: "/images/keramicka-ochrana-laku/03.webp", temporary: true },
-      { src: "/images/keramicka-ochrana-laku/04.webp", temporary: true },
+      {
+        src: "/images/keramicka-ochrana-laku/01.webp",
+        alt: "Aplikace keramické ochrany laku aplikační houbičkou",
+        temporary: true,
+      },
+      {
+        src: "/images/keramicka-ochrana-laku/02.webp",
+        alt: "Stírání a doleštění laku mikrovláknovým hadříkem po aplikaci",
+        temporary: true,
+      },
+      {
+        src: "/images/keramicka-ochrana-laku/03.webp",
+        alt: "Voda perlí na laku ošetřeném keramickou ochranou",
+        temporary: true,
+      },
+      {
+        src: "/images/keramicka-ochrana-laku/04.webp",
+        alt: "Hluboký lesk a odraz světla na kapotě vozu",
+        temporary: true,
+      },
     ],
   },
   {

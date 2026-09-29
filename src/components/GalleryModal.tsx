@@ -143,13 +143,11 @@ export default function GalleryModal({ service, onClose }: GalleryModalProps) {
         aria-modal="true"
         aria-label={`Fotogalerie: ${service.name}`}
         tabIndex={-1}
-        className="relative flex h-full w-full max-w-4xl flex-col overscroll-contain outline-none sm:h-auto"
+        className="relative flex h-full w-full max-w-4xl flex-col overflow-y-auto overscroll-contain outline-none sm:h-auto sm:max-h-[calc(100dvh-4rem)]"
         style={{
           paddingTop: "env(safe-area-inset-top, 0px)",
           paddingBottom: "env(safe-area-inset-bottom, 0px)",
         }}
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
       >
         <div className="flex items-center justify-between gap-3 px-4 py-2 sm:px-0 sm:pb-3 sm:pt-0">
           <h3 className="text-lg font-semibold text-white">{service.name}</h3>
@@ -166,7 +164,12 @@ export default function GalleryModal({ service, onClose }: GalleryModalProps) {
         </div>
 
         {/* Fixed-size stage: every photo is stacked and cross-faded, so switching never shifts layout. */}
-        <div className="relative min-h-0 w-full flex-1 overflow-hidden bg-neutral-900 sm:aspect-[4/3] sm:flex-none sm:rounded-xl">
+        {/* Swipe gestures live on the photo only, so the text below can still scroll normally. */}
+        <div
+          className="relative aspect-[4/3] max-h-[55dvh] w-full flex-none overflow-hidden bg-neutral-900 sm:rounded-xl"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
           {photos.map((photo, i) => {
             const active = i === index;
             return (
@@ -263,7 +266,31 @@ export default function GalleryModal({ service, onClose }: GalleryModalProps) {
           </div>
         )}
 
-        <div className="flex flex-wrap justify-center gap-3 px-4 pb-4 pt-2 sm:px-0 sm:pb-0 sm:pt-3">
+        <div className="px-4 pt-2 sm:px-0">
+          <p className="text-base font-semibold text-accent-text">{service.price}</p>
+          <p className="mt-2 text-sm leading-relaxed text-white/70">{service.description}</p>
+          {service.highlights && (
+            <ul className="mt-3 grid gap-2 text-sm text-white/85 sm:grid-cols-2">
+              {service.highlights.map((item) => (
+                <li key={item} className="flex items-start gap-2">
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent-text"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    aria-hidden="true"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 12.5l4.5 4.5L19 7.5" />
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+
+        <div className="flex flex-wrap justify-center gap-3 px-4 pb-4 pt-4 sm:px-0 sm:pb-0">
           <button
             type="button"
             onClick={() => {
