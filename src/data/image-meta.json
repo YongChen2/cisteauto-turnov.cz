@@ -144,15 +144,30 @@
     "height": 1200,
     "blurDataURL": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAAAwAgCdASoQAAwAA4BaJZwCdAYuvwlQqVGm8AD+4Noban0oofd6WM1EHts/xk6bVuneWBPCOIEvgbT/GvXsCf+768bGP1EaGcxaDKR2fgAAAA=="
   },
-  "/images/keramicka-ochrana-laku/07.webp": {
-    "width": 1200,
-    "height": 1600,
-    "blurDataURL": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAAAQBACdASoQABUAPu1iqU2ppaOiMAgBMB2JQBhQA26sjFSSRnRrZzO2KAD8tG8grF7dzCn1SWklvZ+cvtKa5D/6hk7XU9f9F4QHOrluFCov0yfB2LYQjw5jDXqR40yhZTMoOc7AHOYY/etSQwP5gVWQ62Q1Ns4VrL57n80A16Ws7V/StOT+AAAA"
-  },
   "/images/keramicka-ochrana-laku/08.webp": {
     "width": 1600,
     "height": 1200,
     "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAACwAQCdASoQAAwAA4BaJYwCdAEY6WSAAP5DiyfOLNyOR+fGUaOFIpPNDKsPP+dvEfntvsVjhtsrfI0UDWxzRQhgod4t9mGdE5ucqzoncAA="
+  },
+  "/images/keramicka-ochrana-laku/09.webp": {
+    "width": 1600,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAABQAgCdASoQAAwAA4BaJZQCdH8AGDHnMjiNnQAA/tUXRULbd9/BDWx0h7yR5jIzJI/aDMt1CyL+JPUdy6l+Y91aabFZm66HoHvFnNibQcbFpmwAAAA="
+  },
+  "/images/keramicka-ochrana-laku/10.webp": {
+    "width": 1600,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAQAgCdASoQAAwAA4BaJZwCw7DxNNaVMnmwAP4JuLy/5QUfufeiLyGQEmco0+ptLaZDFaXrAOc2AZmQ27NafQ0yRHe7sNdf2wgAhllBgAA="
+  },
+  "/images/keramicka-ochrana-laku/11.webp": {
+    "width": 1200,
+    "height": 1600,
+    "blurDataURL": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAABQAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JZQCo9BrEP7PSwADvoqAPhEfIvrPVH6VPW4b6qQJHGeYGfLz9lM8YXLcIrMz2j72rOR75lC+SzxBWP0i47933RzuMeIuwlqUz7GTHoAA="
+  },
+  "/images/keramicka-ochrana-laku/12.webp": {
+    "width": 1200,
+    "height": 1600,
+    "blurDataURL": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAADwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JZAC+SBegWNwMJ/mZKB8AAP62breEeDLguOjGp3u5MQIwMEFeqZj64gaD8aH0m05KuS/pjGtzv28UbyqUNjephkN8YVYCvmoAJ5rMYJFpCIx2WRgAAA=="
   },
   "/images/keramicka-ochrana-laku/keramika-karta.webp": {
     "width": 2000,

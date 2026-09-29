@@ -150,11 +150,10 @@ export const services: Service[] = [
       "Keramická ochrana dodá laku hluboký lesk a vytvoří odolnou vrstvu proti nečistotám, UV záření a chemii. Při správné údržbě vydrží až 5 let.",
     description:
       "Nanokeramická vrstva se pevně spojí s lakem a chrání ho před povětrnostními vlivy, UV zářením a chemickým znečištěním. Před aplikací lak vždy důkladně umyjeme, odmastíme a vyleštíme, aby ochrana držela co nejdéle. Keramickou ochranu aplikujeme na osobní auta, SUV, luxusní vozy, veterány i motocykly.",
-    price: "od 5 000 Kč",
+    price: "auta od 15 000 Kč · motocykly od 4 000 Kč",
     priceVariants: [
-      { label: "Keramická ochrana laku", price: "5 000 Kč" },
-      { label: "MPV/SUV", price: "6 000 Kč" },
-      { label: "5 let včetně rozleštění laku", price: "15 000 Kč" },
+      { label: "Aplikace keramické ochrany 5 let, včetně rozleštění laku", price: "od 15 000 Kč" },
+      { label: "Keramická ochrana na motocykly", price: "od 4 000 Kč" },
     ],
     highlights: [
       "Hluboký lesk laku",
@@ -179,6 +178,22 @@ export const services: Service[] = [
         alt: "Černý VW Tiguan v dílně s odrazy hexagonálních světel v laku",
       },
       {
+        src: "/images/keramicka-ochrana-laku/09.webp",
+        alt: "Keramická ochrana laku na voze Maybach",
+      },
+      {
+        src: "/images/keramicka-ochrana-laku/10.webp",
+        alt: "Keramická ochrana laku na motocyklu",
+      },
+      {
+        src: "/images/keramicka-ochrana-laku/11.webp",
+        alt: "Keramická ochrana laku na voze Maybach — kapota s hvězdou a maskou",
+      },
+      {
+        src: "/images/keramicka-ochrana-laku/12.webp",
+        alt: "Keramická ochrana laku na voze Maybach — zadní blatník s odrazy světel",
+      },
+      {
         src: "/images/keramicka-ochrana-laku/04.webp",
         alt: "Bílá Škoda Yeti zepředu s odrazem hexagonálních světel na blatníku",
       },
@@ -189,10 +204,6 @@ export const services: Service[] = [
       {
         src: "/images/keramicka-ochrana-laku/06.webp",
         alt: "Černý RAM 1500 s hlubokým leskem laku",
-      },
-      {
-        src: "/images/keramicka-ochrana-laku/07.webp",
-        alt: "Bílá Škoda Yeti zezadu s odrazy hexagonálních světel",
       },
       {
         src: "/images/keramicka-ochrana-laku/08.webp",

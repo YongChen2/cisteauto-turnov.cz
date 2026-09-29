@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { Fragment, memo } from "react";
 import Image from "next/image";
 import type { Service } from "@/data/services";
 import { blurProps } from "@/lib/image-meta";
@@ -38,7 +38,18 @@ function ServiceCard({ service, onOpen }: ServiceCardProps) {
       <div className="flex flex-1 flex-col gap-2 p-5">
         <h3 className="text-lg font-semibold text-white">{service.name}</h3>
         <p className="text-sm leading-relaxed text-white/60">{service.shortDescription}</p>
-        <span className="mt-auto pt-3 text-sm font-medium text-accent-text">{service.price}</span>
+        <span className="mt-auto pt-3 text-sm font-medium text-accent-text">
+          {/* Multi-part prices ("a · b") only wrap between parts, never inside an amount. */}
+          {service.price.split(" · ").map((part, i) => (
+            <Fragment key={part}>
+              {i > 0 && " "}
+              <span className="whitespace-nowrap">
+                {i > 0 && "· "}
+                {part}
+              </span>
+            </Fragment>
+          ))}
+        </span>
       </div>
     </button>
   );

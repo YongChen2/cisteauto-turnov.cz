@@ -30,9 +30,8 @@ const surcharges: PriceItem[] = [
 ];
 
 const ceramic: PriceItem[] = [
-  { name: "Keramická ochrana laku", price: "5 000 Kč" },
-  { name: "Keramická ochrana laku — MPV/SUV", price: "6 000 Kč" },
-  { name: "Aplikace keramické ochrany 5 let, včetně rozleštění laku", price: "15 000 Kč" },
+  { name: "Aplikace keramické ochrany 5 let, včetně rozleštění laku", price: "od 15 000 Kč" },
+  { name: "Keramická ochrana na motocykly", price: "od 4 000 Kč" },
 ];
 
 const ppf: PriceItem[] = [
