@@ -7,7 +7,7 @@ import { CONSENT_STORAGE_KEY } from "@/lib/consent-config";
 export const metadata: Metadata = {
   title: `Zásady cookies — ${site.name}`,
   description:
-    "Jaké cookies a podobné technologie web Čisté auto Turnov používá, k čemu slouží a jak můžete svůj souhlas kdykoli změnit.",
+    "Jaké cookies a podobné technologie web JR Detailing – Čisté auto Turnov používá, k čemu slouží a jak můžete svůj souhlas kdykoli změnit.",
   alternates: { canonical: "/cookies" },
 };
 

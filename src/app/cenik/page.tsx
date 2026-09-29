@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: `Ceník — ${site.name}`,
   description:
-    "Ceník čištění interiéru, příplatků, čištění exteriéru, voskování a čištění klimatizace ozónem. Čisté auto Turnov, Přepeře.",
+    "Ceník čištění interiéru, příplatků, čištění exteriéru, voskování a čištění klimatizace ozónem. JR Detailing – Čisté auto Turnov, Přepeře.",
   alternates: { canonical: "/cenik" },
 };
 

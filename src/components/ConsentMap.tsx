@@ -14,7 +14,7 @@ export default function ConsentMap() {
     return (
       <div className="overflow-hidden rounded-2xl border border-white/10">
         <iframe
-          title="Mapa — Čisté auto Turnov"
+          title={`Mapa — ${site.name}`}
           src={mapsEmbedUrl}
           className="h-80 w-full"
           style={{ border: 0 }}

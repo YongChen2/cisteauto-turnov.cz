@@ -18,11 +18,26 @@ export default function Hero() {
         <div className="hero-glow absolute inset-0" />
       </div>
 
-      <div className="relative mx-auto flex max-w-6xl flex-col items-start px-4 py-28 sm:px-6 sm:py-36 lg:px-8">
+      <div className="relative mx-auto flex max-w-6xl flex-col items-start px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+        <div className="relative mb-10">
+          <div
+            aria-hidden="true"
+            className="absolute -inset-x-8 -inset-y-6 rounded-full bg-accent/25 blur-3xl"
+          />
+          <Image
+            src={site.logo.light}
+            alt={site.logo.alt}
+            width={site.logo.width}
+            height={site.logo.height}
+            priority
+            sizes="(max-width: 640px) 288px, 448px"
+            className="relative h-auto w-72 sm:w-[28rem]"
+          />
+        </div>
         <p className="text-sm font-medium uppercase tracking-[0.2em] text-accent-text">
           Turnov &amp; okolí
         </p>
-        <h1 className="mt-4 max-w-3xl text-4xl font-bold tracking-tight text-white sm:text-6xl">
+        <h1 className="mt-4 max-w-3xl text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
           {site.name}
         </h1>
         <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/70">

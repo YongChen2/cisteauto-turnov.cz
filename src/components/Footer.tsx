@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import { site } from "@/data/site";
 import CookieSettingsButton from "@/components/CookieSettingsButton";
 
@@ -9,6 +11,16 @@ export default function Footer() {
   return (
     <footer className="border-t border-white/10 bg-black">
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-8 text-sm text-white/50 sm:px-6 lg:px-8">
+        <Link href="/#top" className="self-center md:self-start">
+          <Image
+            src={site.logo.light}
+            alt={site.logo.alt}
+            width={site.logo.width}
+            height={site.logo.height}
+            sizes="96px"
+            className="h-8 w-auto opacity-90 transition hover:opacity-100"
+          />
+        </Link>
         <div className="flex flex-col items-center gap-3 text-center md:flex-row md:justify-between md:text-left">
           <p>
             <a href={site.phoneHref} className={linkClass}>

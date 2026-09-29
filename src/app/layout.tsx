@@ -13,10 +13,11 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: `${site.name} — profesionální detailing vozidel`,
+  title: `${site.name} | profesionální detailing vozidel`,
   description:
-    "Čištění interiéru, leštění a keramická ochrana laku, PPF fólie a dekarbonizace motoru vodíkem. Detailing v Turnově a okolí — Jiří Rejmont.",
+    "Čištění interiéru, leštění a keramická ochrana laku, PPF fólie a dekarbonizace motoru vodíkem. JR Detailing v Turnově a okolí — Jiří Rejmont.",
   keywords: [
+    "JR Detailing",
     "detailing Turnov",
     "čištění interiéru auta",
     "leštění laku",
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
     locale: "cs_CZ",
     url: site.url,
     siteName: site.name,
-    title: `${site.name} — profesionální detailing vozidel`,
+    title: `${site.name} | profesionální detailing vozidel`,
     description:
       "Čištění interiéru, leštění a keramická ochrana laku, PPF fólie a dekarbonizace motoru vodíkem v Turnově.",
   },
@@ -45,6 +46,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     "@context": "https://schema.org",
     "@type": "AutoWash",
     name: site.name,
+    alternateName: ["JR Detailing", "Čisté auto Turnov"],
+    logo: `${site.url}${site.logo.dark}`,
     image: `${site.url}/images/cisteni-interieru/00-cover.webp`,
     telephone: site.phone,
     email: site.email,

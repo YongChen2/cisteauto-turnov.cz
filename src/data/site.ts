@@ -1,5 +1,14 @@
 export const site = {
-  name: "Čisté auto Turnov",
+  name: "JR Detailing – Čisté auto Turnov",
+  logo: {
+    /** light variant for the dark site */
+    light: "/images/logo-light.png",
+    /** original colors, for light surfaces */
+    dark: "/images/logo-dark.png",
+    width: 1438,
+    height: 483,
+    alt: "JR Detailing – Čisté auto Turnov",
+  },
   owner: "Jiří Rejmont",
   claim: "Profesionální péče o váš vůz v Turnově a okolí",
   phone: "702 383 702",
