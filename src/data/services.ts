@@ -110,52 +110,43 @@ export const services: Service[] = [
     slug: "ppf-folie",
     name: "Ochranné PPF fólie",
     shortDescription:
-      "Neviditelná fólie proti odletujícím kamínkům a mechanickému poškození laku.",
+      "Čirá (transparentní) fólie chrání lak před odlétajícími kamínky a škrábanci — barvu vozu nemění.",
     description:
-      "Samohojící polyuretanová fólie chrání nejnamáhanější místa karoserie (přední náraz, kapota, zpětná zrcátka, prahy) před odřením a poškozením od kamínků, aniž by změnila vzhled vozu. Řešíme jak dílčí ochranu, tak celý vůz.",
+      "Aplikujeme výhradně čirou (transparentní) samohojící polyuretanovou fólii. Chrání nejnamáhanější místa karoserie (přední nárazník, kapota, zpětná zrcátka, prahy) před odlétajícími kamínky, škrábanci a odřením, přitom zůstává téměř neviditelná a nemění barvu ani vzhled vozu. Řešíme jak dílčí ochranu, tak celý vůz.",
     price: "Cena na dotaz",
-    // Dočasné fotky, Unsplash (licence umožňuje komerční použití), bez obličejů, nahradit fotkami
-    // z vlastní dílny:
-    // 1) photo-1632605157148-6313421c504b (autor: Clarity Coat) — https://unsplash.com/photos/G6sI_6B_FFY
-    // 2) photo-1748847613527-7d0bba714fed (autor: Theo Lonic) — https://unsplash.com/photos/bp_hQILiM5Q
-    // 3) photo-1551150441-649e0b074fe4 — https://unsplash.com/photos/YWl9W8iBiUk
-    // 4) photo-1666846865636-264959b2b7fa — https://unsplash.com/photos/slub3qIbGBE
-    // 5) photo-1669625334154-24a0bba7d217 — https://unsplash.com/photos/JzmR7QLVS_8
-    // 6) photo-1514316454349-750a7fd3da3a — https://unsplash.com/photos/YApS6TjKJ9c
+    // Dočasné fotky (licence umožňuje komerční použití), jen čirá fólie, bez obličejů, nahradit
+    // fotkami z vlastní dílny:
+    // 1) Pexels 36021355 (autor: Tejas JR, ořez na 4:3) —
+    //    https://www.pexels.com/photo/applying-paint-protection-film-on-a-car-door-36021355/
+    // 2) Pexels 20051468 (autor: WAVYVISUALS, ořez na kapotu a ruce) —
+    //    https://www.pexels.com/photo/bearded-man-applying-foil-on-sports-car-hood-20051468/
+    // 3) Unsplash photo-1632823642656-f62dbc9b4818 (autor: Deniz Demirci, ořez na nárazník a světlo) —
+    //    https://unsplash.com/photos/TZlf3VLG20Y
+    // 4) Unsplash photo-1748847613527-7d0bba714fed (autor: Theo Lonic) — https://unsplash.com/photos/bp_hQILiM5Q
     cover: {
       src: "/images/ppf-folie/01.webp",
-      alt: "Ruce v rukavicích při aplikaci ochranné fólie na karoserii",
+      alt: "Aplikace čiré ochranné PPF fólie stěrkou na dveře vozu",
       temporary: true,
     },
     photos: [
       {
         src: "/images/ppf-folie/01.webp",
-        alt: "Ruce v rukavicích při aplikaci ochranné fólie na karoserii",
+        alt: "Aplikace čiré ochranné PPF fólie stěrkou na dveře vozu",
         temporary: true,
       },
       {
         src: "/images/ppf-folie/02.webp",
-        alt: "Kapota a světlomet červeného vozu během instalace fólie",
+        alt: "Pokládání čiré PPF fólie na kapotu metodou na mokro",
         temporary: true,
       },
       {
         src: "/images/ppf-folie/03.webp",
-        alt: "Detail světlometu a přední části zeleného vozu",
+        alt: "Instalace ochranné fólie na přední nárazník u světlometu",
         temporary: true,
       },
       {
         src: "/images/ppf-folie/04.webp",
-        alt: "Blatník a kolo stříbrného vozu",
-        temporary: true,
-      },
-      {
-        src: "/images/ppf-folie/05.webp",
-        alt: "Přední část tmavého vozu Tesla",
-        temporary: true,
-      },
-      {
-        src: "/images/ppf-folie/06.webp",
-        alt: "Přední nárazník a kapota vozu Mercedes-AMG",
+        alt: "Lesklý lak kapoty a světlomet v původní barvě vozu",
         temporary: true,
       },
     ],
