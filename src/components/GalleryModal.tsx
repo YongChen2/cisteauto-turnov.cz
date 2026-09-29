@@ -283,7 +283,18 @@ export default function GalleryModal({ service, onClose }: GalleryModalProps) {
         )}
 
         <div className="px-4 pt-2 sm:px-0">
-          <p className="text-base font-semibold text-accent-text">{service.price}</p>
+          {service.priceVariants ? (
+            <dl className="divide-y divide-white/10 rounded-xl border border-white/10 text-sm">
+              {service.priceVariants.map((v) => (
+                <div key={v.label} className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-0.5 px-4 py-2.5">
+                  <dt className="text-white/85">{v.label}</dt>
+                  <dd className="whitespace-nowrap font-semibold text-accent-text">{v.price}</dd>
+                </div>
+              ))}
+            </dl>
+          ) : (
+            <p className="text-base font-semibold text-accent-text">{service.price}</p>
+          )}
           <p className="mt-2 text-sm leading-relaxed text-white/70">{service.description}</p>
           {service.highlights && (
             <ul className="mt-3 grid gap-2 text-sm text-white/85 sm:grid-cols-2">

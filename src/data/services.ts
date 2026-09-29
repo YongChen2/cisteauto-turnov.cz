@@ -16,6 +16,8 @@ export type Service = {
   price: string;
   /** krátké body výhod zobrazené v modalu pod galerií */
   highlights?: string[];
+  /** cenové varianty vypsané v modalu (musí odpovídat ceníku /cenik) */
+  priceVariants?: { label: string; price: string }[];
   /** fotka na kartě služby */
   cover: ServicePhoto;
   /** fotky v modal galerii */
@@ -122,45 +124,55 @@ export const services: Service[] = [
       "Keramická ochrana dodá laku hluboký lesk a vytvoří odolnou vrstvu proti nečistotám, UV záření a chemii. Při správné údržbě vydrží až 5 let.",
     description:
       "Nanokeramická vrstva se pevně spojí s lakem a chrání ho před povětrnostními vlivy, UV zářením a chemickým znečištěním. Před aplikací lak vždy důkladně umyjeme, odmastíme a vyleštíme, aby ochrana držela co nejdéle.",
-    price: "5 000 Kč, MPV/SUV 6 000 Kč",
+    price: "od 5 000 Kč",
+    priceVariants: [
+      { label: "Keramická ochrana laku", price: "5 000 Kč" },
+      { label: "MPV/SUV", price: "6 000 Kč" },
+      { label: "5 let včetně rozleštění laku", price: "15 000 Kč" },
+    ],
     highlights: [
       "Hluboký lesk laku",
       "Voda a nečistoty stékají — snadnější mytí",
       "Ochrana proti UV záření a chemii",
       "Vydrží až 5 let při správné údržbě",
     ],
-    // Dočasné fotky (licence umožňuje komerční použití), bez obličejů a log, nahradit fotkami
-    // z vlastní dílny:
-    // 1) Unsplash photo-1652898072202-5084dc85b850 (autor: Vladyslav Lytvyshchenko, ořez na 4:3) —
-    //    https://unsplash.com/photos/9-muyFk7RC4
-    // 2) Pexels 14615260 (autor: Dextar Studio) — https://www.pexels.com/photo/14615260/
-    // 3) Unsplash photo-1780586585338-c56fe47b49f4 (autor: Vitalii Abakumov) — https://unsplash.com/photos/tbHzrVqZzbA
-    // 4) Unsplash photo-1773236321529-fe13541e95f2 (autor: atelierbyvineeth) — https://unsplash.com/photos/lFDWY0SbTSA
+    // Reálné fotky klienta (SPZ a odrazy osob rozmazané).
     cover: {
       src: "/images/keramicka-ochrana-laku/01.webp",
-      alt: "Aplikace keramické ochrany laku aplikační houbičkou",
-      temporary: true,
+      alt: "Aplikace keramické ochrany: přípravek kape na aplikátor nad červeným lakem",
     },
     photos: [
       {
         src: "/images/keramicka-ochrana-laku/01.webp",
-        alt: "Aplikace keramické ochrany laku aplikační houbičkou",
-        temporary: true,
+        alt: "Aplikace keramické ochrany: přípravek kape na aplikátor nad červeným lakem",
       },
       {
         src: "/images/keramicka-ochrana-laku/02.webp",
-        alt: "Stírání a doleštění laku mikrovláknovým hadříkem po aplikaci",
-        temporary: true,
+        alt: "Černý VW Tiguan s lesklým lakem po keramické ochraně",
       },
       {
         src: "/images/keramicka-ochrana-laku/03.webp",
-        alt: "Voda perlí na laku ošetřeném keramickou ochranou",
-        temporary: true,
+        alt: "Černý VW Tiguan v dílně s odrazy hexagonálních světel v laku",
       },
       {
         src: "/images/keramicka-ochrana-laku/04.webp",
-        alt: "Hluboký lesk a odraz světla na kapotě vozu",
-        temporary: true,
+        alt: "Bílá Škoda Yeti zepředu s odrazem hexagonálních světel na blatníku",
+      },
+      {
+        src: "/images/keramicka-ochrana-laku/05.webp",
+        alt: "Zrcadlově lesklé černé dveře s odrazy dílny",
+      },
+      {
+        src: "/images/keramicka-ochrana-laku/06.webp",
+        alt: "Černý RAM 1500 s hlubokým leskem laku",
+      },
+      {
+        src: "/images/keramicka-ochrana-laku/07.webp",
+        alt: "Bílá Škoda Yeti zezadu s odrazy hexagonálních světel",
+      },
+      {
+        src: "/images/keramicka-ochrana-laku/08.webp",
+        alt: "Černá Škoda Superb s lesklým lakem a odrazy oblohy",
       },
     ],
   },
@@ -171,7 +183,12 @@ export const services: Service[] = [
       "Čirá (transparentní) fólie chrání lak před odlétajícími kamínky a škrábanci — barvu vozu nemění.",
     description:
       "Aplikujeme výhradně čirou (transparentní) samohojící polyuretanovou fólii. Chrání nejnamáhanější místa karoserie (přední nárazník, kapota, zpětná zrcátka, prahy) před odlétajícími kamínky, škrábanci a odřením, přitom zůstává téměř neviditelná a nemění barvu ani vzhled vozu. Řešíme jak dílčí ochranu, tak celý vůz.",
-    price: "Cena na dotaz",
+    price: "od 8 000 Kč",
+    priceVariants: [
+      { label: "Kapota", price: "od 8 000 Kč" },
+      { label: "Kapota, světla, zrcátka", price: "10 000 Kč" },
+      { label: "Celý předek (kapota, světla, zrcátka, nárazník, blatníky)", price: "od 30 000 Kč" },
+    ],
     // Dočasné fotky (licence umožňuje komerční použití), jen čirá fólie, bez obličejů, nahradit
     // fotkami z vlastní dílny:
     // 1) Pexels 36021355 (autor: Tejas JR, ořez na 4:3) —
@@ -217,17 +234,16 @@ export const services: Service[] = [
     description:
       "Vodík přivedený do sání zvýší teplotu spalování a spálí usazený karbon v motoru, na ventilech, katalyzátoru i DPF filtru. Proces trvá zhruba hodinu, bez demontáže dílů a bez nutnosti výměny oleje. Výsledkem je obnovený výkon, nižší spotřeba a tišší chod motoru.",
     price: "2 499 Kč (do 2 500 cm³), 2 999 Kč (2 500–4 000 cm³)",
-    // Dočasné fotky, Unsplash (licence umožňuje komerční použití), nahradit fotkami z vlastní dílny:
-    // 1) photo-1768929571671-4e58e2d9e72f (autor: Laura Oliveira) — https://unsplash.com/photos/k0HQnRcyEW0
-    // 2) photo-1672717892960-cb54e0a0486b (autor: Ben Duke) — https://unsplash.com/photos/xXmAAf5tmSY
-    // 3) photo-1707414902345-4697ba724477 (autor: Blayne Spires) — https://unsplash.com/photos/d9PeiNr58FM
-    // 4) photo-1527383418406-f85a3b146499 — https://unsplash.com/photos/VurHDpO4VYI
-    cover: { src: "/images/dekarbonizace-motoru/01.webp", temporary: true },
+    // Reálná fotka klienta (SPZ rozmazaná).
+    cover: {
+      src: "/images/dekarbonizace-motoru/01.webp",
+      alt: "Přístroj DECA SS 4000 připojený k vozu Škoda s otevřenou kapotou v dílně",
+    },
     photos: [
-      { src: "/images/dekarbonizace-motoru/01.webp", temporary: true },
-      { src: "/images/dekarbonizace-motoru/02.webp", temporary: true },
-      { src: "/images/dekarbonizace-motoru/03.webp", temporary: true },
-      { src: "/images/dekarbonizace-motoru/04.webp", temporary: true },
+      {
+        src: "/images/dekarbonizace-motoru/01.webp",
+        alt: "Přístroj DECA SS 4000 připojený k vozu Škoda s otevřenou kapotou v dílně",
+      },
     ],
   },
   {

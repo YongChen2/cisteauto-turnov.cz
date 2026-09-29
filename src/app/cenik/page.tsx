@@ -29,6 +29,22 @@ const surcharges: PriceItem[] = [
   { name: "Odstranění psích chlupů", note: "dle rozsahu znečištění", price: "od 300 Kč" },
 ];
 
+const ceramic: PriceItem[] = [
+  { name: "Keramická ochrana laku", price: "5 000 Kč" },
+  { name: "Keramická ochrana laku — MPV/SUV", price: "6 000 Kč" },
+  { name: "Aplikace keramické ochrany 5 let, včetně rozleštění laku", price: "15 000 Kč" },
+];
+
+const ppf: PriceItem[] = [
+  { name: "Kapota", price: "od 8 000 Kč" },
+  { name: "Kapota, světla, zrcátka", price: "10 000 Kč" },
+  {
+    name: "Celý předek",
+    note: "kapota, světla, zrcátka, nárazník, blatníky",
+    price: "od 30 000 Kč",
+  },
+];
+
 const other: PriceItem[] = [
   { name: "Čištění exteriéru včetně vosku", price: "od 800 Kč" },
   { name: "Voskování tvrdým (ročním) voskem", price: "od 2 000 Kč" },
@@ -90,6 +106,10 @@ export default function PriceListPage() {
           </PriceSection>
 
           <PriceSection title="Příplatky" items={surcharges} />
+
+          <PriceSection title="Keramická ochrana laku" items={ceramic} />
+
+          <PriceSection title="Aplikace ochranné PPF fólie" items={ppf} />
 
           <PriceSection title="Exteriér a další služby" items={other} />
         </div>

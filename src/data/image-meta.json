@@ -41,23 +41,8 @@
   },
   "/images/dekarbonizace-motoru/01.webp": {
     "width": 1600,
-    "height": 1086,
-    "blurDataURL": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADQAQCdASoQAAsAA4BaJQAB8KkEEcnOKAD+zd71mxn+FBI3XfaS+ze4ECna1n3YZMjhJGn9Dv6XrVQWOYGwJEig7P0N5CWqTdPjUGzeuKpgnfFt5E0ranBHO0up80AA"
-  },
-  "/images/dekarbonizace-motoru/02.webp": {
-    "width": 1600,
-    "height": 1067,
-    "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAQCdASoQAAsAA4BaJZQAAmsNVEvqFaAA/uoARgAVormYsNsEp5M9tUf5e6tdI/xenoFn3O7EDOVWCCMRI7rwnp+OHX+XPE66G4mgB1OK1F7rAAA="
-  },
-  "/images/dekarbonizace-motoru/03.webp": {
-    "width": 1600,
-    "height": 2240,
-    "blurDataURL": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAAAQBACdASoQABYAPu1iqU2ppaOiMAgBMB2JZwAD5Gn1hpb/zNU2r2QKwAD+zgEZXH7ffPSQ1eA/JgS6f84rXXL9A/pPng1Qjg2V0qjiBusfflJRmRmplM8hxdbIOwD4R+b33ftHQGdOKbVjiDTcTyQufelTaerpwwxk5EJTPUjiBREk72gDZXfVtgA="
-  },
-  "/images/dekarbonizace-motoru/04.webp": {
-    "width": 1600,
-    "height": 1067,
-    "blurDataURL": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAABwAgCdASoQAAsAA4BaJaACdAYrJy50BvRQqyIAAP6jTSCgtoYWE4zWcrk/aTWfMIZ+A+1ZWmwqP+PkliX+hV3JnAp5ChnMORaNx/SIYmB+nULb01AfHNAPRAJpzRLL0HVYBi4pJyctoA++bV4TLIAA"
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAAAQAgCdASoQAAwAA4BaJZQC7AD1cNXAQpXoAP7tqOzhyb3ZTRs/V/CtUDHx6XnLtqrgghhXiRtkQdp957oye32h+DHxZeqMCAxaS3V6923YAA=="
   },
   "/images/hero/hero.webp": {
     "width": 1600,
@@ -65,24 +50,44 @@
     "blurDataURL": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAACwAgCdASoQABwAPu1iqU2ppaQiMAgBMB2JaQAAeyAA/vD/X0VFxLurbjYwbKgAAAA="
   },
   "/images/keramicka-ochrana-laku/01.webp": {
-    "width": 1600,
-    "height": 1200,
-    "blurDataURL": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAwAgCdASoQAAwAA4BaJZQAD46w/DW9oaNDAAD+4VkwXtWrpJXEcwS/9tzQm5tqb0YDB1G+m3PtOzWDhyX7sxv3HqEYsEusgcS+3OKdjFN8eQ2jSizpnJzQRgN0BgAA"
+    "width": 946,
+    "height": 710,
+    "blurDataURL": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAABwAgCdASoQAAwAA4BaJbACsAYs3zT/1/Qy5g9gAP5FuvFPuHz5mdMzwm3PeFpj01LDgo/MpCvRkDySjqyQAWRq2jkS+N7iMFM1T81zCS/BMZafPETMDq51qxiUG+Dpb/hTiuEXsQ4DeEm19JBuEHFUfz2JQ6TvPG43VH/V+CuLQo2P5fYPIAAA"
   },
   "/images/keramicka-ochrana-laku/02.webp": {
     "width": 1600,
-    "height": 1067,
-    "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAABQAgCdASoQAAsAA4BaJbAC7AEQ14iSjtDO7oAA/sJBbKn0XofU4SrirpbvV8p5a6n1AkKZxrypSEHBsHis4M2sDdUUbDfCEBE/2O9fngUrhgAA"
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADQAQCdASoQAAwAA4BaJQBOgB9DF3ragAD+kW6BJVmvkS9pLjDftHQwG7ldzOjB2RVQcH7+OiIro+3ofRlOAuolbbsNh8IjF/Qiba7lkhzwAAAA"
   },
   "/images/keramicka-ochrana-laku/03.webp": {
     "width": 1600,
-    "height": 2133,
-    "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAwCdASoQABUAPu1oqk6ppiQiMAgBMB2JZwDG9CG+7n+eLb9VGw+4APx/Ri4Mgr0RtoO+cw0WOR0p/o49vCPKsBHCGhD/KqoN6yecAUPv6Sf3AAA="
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAQAgCdASoQAAwAA4BaJZQCw7EPdjmsC3OAAP7g149Waz1BCekKOhk4lZUEUC2TrFDmAbrt/2c/oRA7soqUKjkqwXA8Md/vZjTNAAAA"
   },
   "/images/keramicka-ochrana-laku/04.webp": {
     "width": 1600,
-    "height": 1067,
-    "blurDataURL": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAAAwAgCdASoQAAsAA4BaJQBOgCIbEGUeiqcsAAD+95VPH/692WzGNRp8xdh1TD5LbOIjUPI7Gjqpk06hI2lz1XOmFTsAAA=="
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAQAgCdASoQAAwAA4BaJZwAAugzs/Mh2R4AAPZCn8MkROb8ujGiY/RbnpYzmIRkrPLA8ubROrtwTuhhN7Yql4qIN4zqJpvl7zFlV+RgVEHmadZAOFchrNbbvM98AAAA"
+  },
+  "/images/keramicka-ochrana-laku/05.webp": {
+    "width": 1600,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAQCdASoQAAwAA4BaJQBdgB9hvLUT/sAA/pG8KgKF3RAJESqnwOvVmUAVxrWdFYW1CMVGBQgtruEm4nZwMtYpTrGaxNz90S7x/RQg5UwORXigAAA="
+  },
+  "/images/keramicka-ochrana-laku/06.webp": {
+    "width": 1600,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAAAwAgCdASoQAAwAA4BaJZwCdAYuvwlQqVGm8AD+4Noban0oofd6WM1EHts/xk6bVuneWBPCOIEvgbT/GvXsCf+768bGP1EaGcxaDKR2fgAAAA=="
+  },
+  "/images/keramicka-ochrana-laku/07.webp": {
+    "width": 1200,
+    "height": 1600,
+    "blurDataURL": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAAAQBACdASoQABUAPu1iqU2ppaOiMAgBMB2JQBhQA26sjFSSRnRrZzO2KAD8tG8grF7dzCn1SWklvZ+cvtKa5D/6hk7XU9f9F4QHOrluFCov0yfB2LYQjw5jDXqR40yhZTMoOc7AHOYY/etSQwP5gVWQ62Q1Ns4VrL57n80A16Ws7V/StOT+AAAA"
+  },
+  "/images/keramicka-ochrana-laku/08.webp": {
+    "width": 1600,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAACwAQCdASoQAAwAA4BaJYwCdAEY6WSAAP5DiyfOLNyOR+fGUaOFIpPNDKsPP+dvEfntvsVjhtsrfI0UDWxzRQhgod4t9mGdE5ucqzoncAA="
   },
   "/images/lesteni-laku/01.webp": {
     "width": 1600,
