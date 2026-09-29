@@ -37,7 +37,7 @@ export default function MobileCallButton() {
     <div
       aria-hidden={hidden}
       inert={hidden}
-      className={`fixed inset-x-0 z-40 border-t border-white/10 bg-neutral-950/95 p-3 backdrop-blur transition-transform duration-300 sm:hidden ${
+      className={`fixed inset-x-0 z-(--z-callbar) border-t border-white/10 bg-neutral-950/95 p-3 backdrop-blur transition-transform duration-300 sm:hidden ${
         hidden ? "translate-y-[150%]" : "translate-y-0"
       }`}
       style={{

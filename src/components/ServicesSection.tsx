@@ -1,20 +1,33 @@
 "use client";
 
-import { useCallback, useState } from "react";
-import dynamic from "next/dynamic";
+import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { services } from "@/data/services";
 import ServiceCard from "@/components/ServiceCard";
-import { loadGalleryModal } from "@/lib/gallery";
+import GalleryModal from "@/components/GalleryModal";
 
-// Gallery code is fetched on first hover/focus of a card (see ServiceCard), not with the page.
-const GalleryModal = dynamic(loadGalleryModal, { ssr: false });
+declare global {
+  interface Window {
+    __galleryReady?: boolean;
+    __pendingGallery?: string;
+  }
+}
 
 export default function ServicesSection() {
   const [openSlug, setOpenSlug] = useState<string | null>(null);
   const openService = services.find((s) => s.slug === openSlug) ?? null;
   const handleOpen = useCallback((slug: string) => setOpenSlug(slug), []);
   const handleClose = useCallback(() => setOpenSlug(null), []);
+
+  // A card tapped before hydration is recorded by the inline script in the root layout;
+  // open that gallery as soon as React is ready.
+  useEffect(() => {
+    window.__galleryReady = true;
+    const pending = window.__pendingGallery;
+    delete window.__pendingGallery;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    if (pending && services.some((s) => s.slug === pending)) setOpenSlug(pending);
+  }, []);
 
   return (
     <section id="sluzby" className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">

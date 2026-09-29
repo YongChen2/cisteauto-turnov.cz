@@ -1,38 +1,28 @@
 {
-  "/images/cisteni-interieru/00-cover.webp": {
-    "width": 1600,
-    "height": 2133,
-    "blurDataURL": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAACQAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JaQATwADjRPp5AYLQAP7c8UHSlZQQ7aKZoldceSYL0R/KoDGaAfw3d6qv1kAtcOCKvdObzw7hpMm/7ME+yjN6K468HwTurFx/YQ7th5s547rVTqr67kkZlCdZIm1CNzT2g4AA"
-  },
   "/images/cisteni-interieru/01.webp": {
-    "width": 282,
-    "height": 212,
-    "blurDataURL": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADwAQCdASoQAAwAA4BaJZwAAuY6GDRWJgAA/umvw35J4L6x5Bc7e9tNqjtB+A7xFd78SgS7l/vTv9KFQ/OJYQAA"
+    "width": 1600,
+    "height": 1065,
+    "blurDataURL": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAAAwAgCdASoQAAsAA4BaJZwAD5LPtXxOM71WCAD82B/7OPptgijmK7qKKLyak7u99Wkgx6+phL7mGrFle4yRhvL5dMzCE9P5hgG9j5ADRQGcutvjBHiWNvgTSGo/ntxK2UES0xHsPIAAAA=="
   },
   "/images/cisteni-interieru/02.webp": {
-    "width": 282,
-    "height": 212,
-    "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADwAQCdASoQAAwAA4BaJZwAAwF6DQZArRAA/h/aOrBM2/EIb1Vb/hQwYGGgtw+nCBSAqQNbCVm55VmFgqmyejIrO2pte2Bq5W3pAAAA"
+    "width": 1600,
+    "height": 1060,
+    "blurDataURL": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAAAQAgCdASoQAAsAA4BaJZQCdAD2BhWlqHsAAOJ022qp7Mfl/SnRCwZgv/5yrR4xFUFhqsytunfevbBtzv1b459cAwe85BR3tQ/PDx4ytwoAAA=="
   },
   "/images/cisteni-interieru/03.webp": {
-    "width": 282,
-    "height": 212,
-    "blurDataURL": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADQAQCdASoQAAwAA4BaJaQAAsfcPTzqAAD+66ra38ATMxeoVLc7oGKhzEDqyYxrF6X43qKuxlamkz+1SXFWpLsWJAAAAA=="
+    "width": 1600,
+    "height": 1060,
+    "blurDataURL": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADQAQCdASoQAAsAA4BaJYwCw7CmCwL0AAD+gtn+Hr449N7OyogIyQQ00KG8TI8FUIwmrBAq0tV69IMW4M9Y3RuDpu+ig+rKJoxiOLFRppdwk0olumYyAAAA"
   },
   "/images/cisteni-interieru/04.webp": {
-    "width": 282,
-    "height": 212,
-    "blurDataURL": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADwAQCdASoQAAwAA4BaJaQAAscpwPnScwAA/kqA41X8tpiSJ5d0b5MIDajhhZ8lIqdoq9nreZuG9PQA"
+    "width": 1348,
+    "height": 899,
+    "blurDataURL": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAAAwAgCdASoQAAsAA4BaJbACdAYv1wnGQraTgAD947DDhw6BR0v1+CeYqXToQni/6iJ2VaGE6cuD9a2EStSn5vGzoNUue50zef7XrhzC1b9C51y+fJQ13KHNPSNumS0/Z9y5FgAA"
   },
   "/images/cisteni-interieru/05.webp": {
-    "width": 282,
-    "height": 212,
-    "blurDataURL": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADQAQCdASoQAAwAA4BaJaQAApxWr5kmAAD+284Y/tNCtU2YfJYE6HXcQN7dAFyHJtZeQ3O8yjlGvMITrjgAAA=="
-  },
-  "/images/cisteni-interieru/06.webp": {
-    "width": 282,
-    "height": 212,
-    "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADQAQCdASoQAAwAA4BaJaQAAlXoDI1KAADLSreWIWKHqb6Bot8yx3kl4OPDVVjfcvObCSy102puWhhOrgEDc5MnFncZZqHhVDTjZUf9iNQQoi/GgAA="
+    "width": 1600,
+    "height": 1067,
+    "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADwAQCdASoQAAsAA4BaJZwAAxfWBnj4ofAA/vNEJZyvxOtRiqCgeOZXH67lINkd3yt8MMXqJ8viDwqPG8VBGyviG3hFdiTPeaLkAA=="
   },
   "/images/cisteni-klimatizace-ozonem/01.webp": {
     "width": 1600,

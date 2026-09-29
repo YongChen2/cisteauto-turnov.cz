@@ -31,18 +31,46 @@ export const services: Service[] = [
     description:
       "Důkladné vysátí koberců i zavazadlového prostoru, tepování sedadel, dveřních výplní a koberců, omytí veškerých plastů a jejich ošetření antistatickým přípravkem, mytí oken zevnitř. Příplatky za kůži, kombinaci látka/alcantara, silné znečištění nebo srst zvířat řešíme individuálně na místě.",
     price: "od 2 000 Kč",
-    // Dočasná titulní fotka, Unsplash, photo-1654522659761-b6ad370e0bb3 (autor: Vladyslav Lytvyshchenko),
-    // https://unsplash.com/photos/A2etZFKGXA0 — nahradit kvalitní fotkou vlastní práce klienta.
-    cover: { src: "/images/cisteni-interieru/00-cover.webp", temporary: true },
-    // Reálné fotky z realizací klienta (nízké rozlišení 282×212 px z původního webu) — zobrazovat
-    // v přirozené velikosti, nezvětšovat.
+    // Dočasné fotky (licence umožňuje komerční použití), bez obličejů a log, nahradit fotkami
+    // z vlastní dílny:
+    // 1) Pexels 1633602 (autor: Mike Bird) — https://www.pexels.com/photo/1633602/
+    // 2) Pexels 5233285 (autor: Khunkorn Laowisit) — https://www.pexels.com/photo/5233285/
+    // 3) Pexels 5233264 (autor: Khunkorn Laowisit) — https://www.pexels.com/photo/5233264/
+    // 4) Unsplash photo-1771491237218-cbd4a707497e (autor: Luay Barani, ořez) —
+    //    https://unsplash.com/photos/5SmPnmCjwcU
+    // 5) Unsplash photo-1682858110563-3f609263d418 (autor: Igor Constantino) —
+    //    https://unsplash.com/photos/jBL6jiMgwlM
+    cover: {
+      src: "/images/cisteni-interieru/01.webp",
+      alt: "Čistý světlý kožený interiér vozu po kompletním čištění",
+      temporary: true,
+    },
     photos: [
-      { src: "/images/cisteni-interieru/01.webp", natural: { width: 282, height: 212 } },
-      { src: "/images/cisteni-interieru/02.webp", natural: { width: 282, height: 212 } },
-      { src: "/images/cisteni-interieru/03.webp", natural: { width: 282, height: 212 } },
-      { src: "/images/cisteni-interieru/04.webp", natural: { width: 282, height: 212 } },
-      { src: "/images/cisteni-interieru/05.webp", natural: { width: 282, height: 212 } },
-      { src: "/images/cisteni-interieru/06.webp", natural: { width: 282, height: 212 } },
+      {
+        src: "/images/cisteni-interieru/01.webp",
+        alt: "Čistý světlý kožený interiér vozu po kompletním čištění",
+        temporary: true,
+      },
+      {
+        src: "/images/cisteni-interieru/02.webp",
+        alt: "Tepování látkového sedadla extrakční hubicí",
+        temporary: true,
+      },
+      {
+        src: "/images/cisteni-interieru/03.webp",
+        alt: "Hloubkové čištění koberce v interiéru vozu",
+        temporary: true,
+      },
+      {
+        src: "/images/cisteni-interieru/04.webp",
+        alt: "Čištění palubní desky detailingovým štětcem",
+        temporary: true,
+      },
+      {
+        src: "/images/cisteni-interieru/05.webp",
+        alt: "Detail kožených sedadel a středového tunelu po úpravě",
+        temporary: true,
+      },
     ],
   },
   {

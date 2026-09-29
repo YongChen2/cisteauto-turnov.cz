@@ -70,6 +70,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <script
+          // Remembers a service card clicked before the page is interactive (see ServicesSection).
+          dangerouslySetInnerHTML={{
+            __html:
+              'document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-gallery]");if(b&&!window.__galleryReady)window.__pendingGallery=b.getAttribute("data-gallery")},true);',
+          }}
+        />
         <Header />
         {children}
         <MobileCallButton />

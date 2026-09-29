@@ -69,7 +69,7 @@ export default function CookieConsent() {
           ref={bannerRef}
           role="region"
           aria-label="Souhlas s cookies"
-          className="fixed inset-x-0 bottom-0 z-50 border-t border-white/15 bg-neutral-900/95 backdrop-blur"
+          className="fixed inset-x-0 bottom-0 z-(--z-cookie) border-t border-white/15 bg-neutral-900/95 backdrop-blur"
           style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
         >
           <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-4 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">

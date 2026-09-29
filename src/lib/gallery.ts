@@ -21,6 +21,3 @@ export function preloadGalleryPhoto(photo: ServicePhoto | undefined) {
   if (props.srcSet) img.srcset = props.srcSet;
   img.src = props.src;
 }
-
-/** Loads the gallery modal's code ahead of the first click. */
-export const loadGalleryModal = () => import("@/components/GalleryModal");

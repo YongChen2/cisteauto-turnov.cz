@@ -17,6 +17,12 @@
   --accent-muted: color-mix(in srgb, var(--accent) 15%, transparent);
   /* form errors — deliberately NOT red so they never read as accent; always paired with an icon */
   --danger: #fdba74;
+
+  /* z-index scale — the only place stacking order is defined */
+  --z-header: 40;
+  --z-callbar: 45;
+  --z-cookie: 50;
+  --z-modal: 60;
 }
 
 @theme inline {
@@ -83,23 +89,20 @@ main[id] {
   scroll-margin-top: 4.5rem;
 }
 
+/* Scroll reveal animates opacity only: a transform (even translateY(0)) or will-change would make
+   the section a containing block for position: fixed descendants such as modals. */
 .fade-in {
   opacity: 0;
-  transform: translateY(16px);
-  transition:
-    opacity 0.6s ease,
-    transform 0.6s ease;
+  transition: opacity 0.6s ease;
 }
 
 .fade-in-visible {
   opacity: 1;
-  transform: translateY(0);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .fade-in {
     opacity: 1;
-    transform: none;
     transition: none;
   }
 }

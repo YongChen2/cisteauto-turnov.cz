@@ -6,7 +6,7 @@ import MobileMenu from "@/components/MobileMenu";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-white/10 bg-neutral-950/80 backdrop-blur supports-[backdrop-filter]:bg-neutral-950/60">
+    <header className="sticky top-0 z-(--z-header) border-b border-white/10 bg-neutral-950/80 backdrop-blur supports-[backdrop-filter]:bg-neutral-950/60">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <Link href="/#top" className="flex-shrink-0">
           <Image

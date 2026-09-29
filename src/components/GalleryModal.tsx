@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import type { Service } from "@/data/services";
 import { site } from "@/data/site";
 import { blurProps } from "@/lib/image-meta";
@@ -13,13 +14,14 @@ type GalleryModalProps = {
 };
 
 const SWIPE_DISTANCE = 40;
-const CLOSE_SWIPE_DISTANCE = 90;
+/** Movement after which a touch is locked to one axis; only horizontal swipes switch photos. */
+const DIRECTION_LOCK = 10;
 
 export default function GalleryModal({ service, onClose }: GalleryModalProps) {
   const [index, setIndex] = useState(0);
   const [loaded, setLoaded] = useState<ReadonlySet<number>>(() => new Set());
   const dialogRef = useRef<HTMLDivElement>(null);
-  const touchStart = useRef<{ x: number; y: number } | null>(null);
+  const touch = useRef<{ x: number; y: number; axis: "x" | "y" | null } | null>(null);
   const onCloseRef = useRef(onClose);
   const afterCloseRef = useRef<(() => void) | null>(null);
   const photos = service.photos;
@@ -33,8 +35,8 @@ export default function GalleryModal({ service, onClose }: GalleryModalProps) {
   const goPrev = useCallback(() => setIndex((i) => (i - 1 + count) % count), [count]);
   const goNext = useCallback(() => setIndex((i) => (i + 1) % count), [count]);
 
-  // Closing goes through history so the phone's back button/gesture also closes the gallery.
-  const requestClose = useCallback(() => window.history.back(), []);
+  // Closing is always immediate and idempotent; the history entry is tidied up on unmount.
+  const requestClose = useCallback(() => onCloseRef.current(), []);
 
   const markLoaded = useCallback((i: number) => {
     setLoaded((prev) => (prev.has(i) ? prev : new Set(prev).add(i)));
@@ -62,7 +64,8 @@ export default function GalleryModal({ service, onClose }: GalleryModalProps) {
     const previouslyFocused = document.activeElement as HTMLElement | null;
     dialogRef.current?.focus();
 
-    window.history.pushState({ gallery: service.slug }, "");
+    // Own history entry so the phone's back button/gesture closes the gallery.
+    window.history.pushState({ galleryModal: service.slug }, "");
     const handlePopState = () => onCloseRef.current();
     window.addEventListener("popstate", handlePopState);
 
@@ -100,6 +103,8 @@ export default function GalleryModal({ service, onClose }: GalleryModalProps) {
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("popstate", handlePopState);
+      // Closed by the UI (not by Back): drop our history entry; the listener is already gone.
+      if (window.history.state?.galleryModal) window.history.back();
       Object.assign(body.style, previous);
       window.scrollTo(0, scrollY);
       previouslyFocused?.focus({ preventScroll: true });
@@ -107,32 +112,41 @@ export default function GalleryModal({ service, onClose }: GalleryModalProps) {
     };
   }, [service.slug, hasMultiple, goPrev, goNext, requestClose]);
 
+  // Gestures only read coordinates (no drag transform), so an interrupted swipe leaves no state behind.
   const handleTouchStart = (e: React.TouchEvent) => {
-    touchStart.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    touch.current = { x: e.touches[0].clientX, y: e.touches[0].clientY, axis: null };
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    const t = touch.current;
+    if (!t || t.axis) return;
+    const dx = Math.abs(e.touches[0].clientX - t.x);
+    const dy = Math.abs(e.touches[0].clientY - t.y);
+    if (dx > DIRECTION_LOCK || dy > DIRECTION_LOCK) t.axis = dx > dy ? "x" : "y";
   };
 
   const handleTouchEnd = (e: React.TouchEvent) => {
-    const start = touchStart.current;
-    touchStart.current = null;
-    if (!start) return;
-    const dx = e.changedTouches[0].clientX - start.x;
-    const dy = e.changedTouches[0].clientY - start.y;
-    if (Math.abs(dy) > Math.abs(dx)) {
-      if (Math.abs(dy) > CLOSE_SWIPE_DISTANCE) requestClose();
-      return;
-    }
-    if (hasMultiple && Math.abs(dx) > SWIPE_DISTANCE) {
+    const t = touch.current;
+    touch.current = null;
+    if (!t || t.axis !== "x" || !hasMultiple) return;
+    const dx = e.changedTouches[0].clientX - t.x;
+    if (Math.abs(dx) > SWIPE_DISTANCE) {
       if (dx > 0) goPrev();
       else goNext();
     }
   };
 
+  const handleTouchCancel = () => {
+    touch.current = null;
+  };
+
   const photoAlt = (i: number) =>
     photos[i].alt ?? `${service.name} — fotografie ${i + 1} z ${count}`;
 
-  return (
+  // Portal to <body>: no ancestor transform/opacity/stacking context can offset or clip the modal.
+  return createPortal(
     <div
-      className="fixed inset-0 z-50 flex h-[100dvh] items-stretch justify-center bg-black/90 sm:items-center sm:px-4 sm:py-8"
+      className="fixed inset-0 z-(--z-modal) flex h-[100dvh] items-stretch justify-center bg-neutral-950 sm:items-center sm:bg-black/90 sm:px-4 sm:py-8"
       onMouseDown={(e) => {
         if (e.target === e.currentTarget) requestClose();
       }}
@@ -168,7 +182,9 @@ export default function GalleryModal({ service, onClose }: GalleryModalProps) {
         <div
           className="relative aspect-[4/3] max-h-[55dvh] w-full flex-none overflow-hidden bg-neutral-900 sm:rounded-xl"
           onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
+          onTouchCancel={handleTouchCancel}
         >
           {photos.map((photo, i) => {
             const active = i === index;
@@ -311,6 +327,7 @@ export default function GalleryModal({ service, onClose }: GalleryModalProps) {
           </a>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
