@@ -16,6 +16,9 @@ const FORMSUBMIT_ENDPOINT = `https://formsubmit.co/ajax/${site.email}`;
 const MIN_FILL_TIME_MS = 3000;
 const SUCCESS_MESSAGE = "Děkujeme, ozveme se vám co nejdříve.";
 const ERROR_MESSAGE = `Odeslání se nezdařilo, zavolejte nám prosím na ${site.phone}.`;
+const ACTIVATION_MESSAGE = `Formulář čeká na aktivaci, zavolejte nám prosím na ${site.phone}.`;
+
+type FormSubmitResponse = { success?: boolean | string; message?: string };
 
 export default function ContactForm() {
   const [status, setStatus] = useState<FormStatus>("idle");
@@ -125,15 +128,34 @@ export default function ContactForm() {
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify(payload),
       });
-      const json = (await response.json().catch(() => null)) as {
-        success?: boolean | string;
-      } | null;
-      if (!response.ok || String(json?.success) !== "true") {
-        throw new Error(`FormSubmit responded with ${response.status}`);
+      const body = await response.text();
+      let json: FormSubmitResponse | null = null;
+      try {
+        json = JSON.parse(body) as FormSubmitResponse;
+      } catch {
+        // non-JSON body (e.g. HTML error page) — logged below
       }
-      succeed();
+
+      if (response.ok && String(json?.success) === "true") {
+        succeed();
+        return;
+      }
+
+      setStatus("error");
+      // FormSubmit answers success "false" until the owner clicks the
+      // activation link it e-mails after the first submission.
+      if (/activat/i.test(json?.message ?? "")) {
+        console.warn("ContactForm: FormSubmit form is not activated yet", {
+          status: response.status,
+          body: json ?? body,
+        });
+        setStatusMessage(ACTIVATION_MESSAGE);
+        return;
+      }
+      console.error("ContactForm: submission failed", { status: response.status, body });
+      setStatusMessage(ERROR_MESSAGE);
     } catch (err) {
-      console.error("ContactForm: submission failed", err);
+      console.error("ContactForm: submission failed (network error)", err);
       setStatus("error");
       setStatusMessage(ERROR_MESSAGE);
     }
@@ -151,7 +173,7 @@ export default function ContactForm() {
         key={formKey}
         onSubmit={handleSubmit}
         noValidate
-        className="mt-6 flex flex-col gap-5"
+        className="mt-6 flex flex-col gap-1"
       >
         {/* Honeypot — hidden from real visitors, catches simple bots */}
         <div className="absolute h-0 w-0 overflow-hidden opacity-0" aria-hidden="true">
@@ -159,7 +181,7 @@ export default function ContactForm() {
           <input type="text" id="_honey" name="_honey" tabIndex={-1} autoComplete="off" />
         </div>
 
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-x-5 gap-y-1 sm:grid-cols-2">
           <Field label="Jméno a příjmení" htmlFor="name" error={errors.name} required>
             <input
               ref={nameInputRef}
@@ -211,7 +233,7 @@ export default function ContactForm() {
               onChange={(e) => setSelectedService(e.target.value)}
               aria-invalid={Boolean(errors.service)}
               aria-describedby={errors.service ? "service-error" : undefined}
-              className={inputClass(Boolean(errors.service))}
+              className={inputClass(Boolean(errors.service), "select")}
             >
               <option value="" disabled>
                 Vyberte službu
@@ -262,11 +284,11 @@ export default function ContactForm() {
             maxLength={1000}
             aria-invalid={Boolean(errors.message)}
             aria-describedby={errors.message ? "message-error" : undefined}
-            className={inputClass(Boolean(errors.message))}
+            className={inputClass(Boolean(errors.message), "textarea")}
           />
         </Field>
 
-        <div>
+        <div className="mt-2">
           <label htmlFor="consent" className="flex min-h-11 items-start gap-3 text-sm text-white/70">
             <input
               id="consent"
@@ -285,11 +307,9 @@ export default function ContactForm() {
               za účelem vyřízení poptávky.
             </span>
           </label>
-          {errors.consent && (
-            <ErrorMessage id="consent-error" className="mt-1">
-              {errors.consent}
-            </ErrorMessage>
-          )}
+          <div className="mt-1 min-h-5">
+            {errors.consent && <ErrorMessage id="consent-error">{errors.consent}</ErrorMessage>}
+          </div>
         </div>
 
         <div className="min-h-6" aria-live="polite">
@@ -304,7 +324,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={isPending}
-          className="flex min-h-11 items-center justify-center gap-2 rounded-full bg-accent px-7 py-3 text-sm font-semibold text-white transition hover:bg-accent-hover disabled:cursor-not-allowed disabled:opacity-60"
+          className="mt-3 flex min-h-11 items-center justify-center gap-2 rounded-full bg-accent px-7 py-3 text-sm font-semibold text-white transition hover:bg-accent-hover disabled:cursor-not-allowed disabled:opacity-60"
         >
           {isPending && (
             <svg viewBox="0 0 24 24" className="h-4 w-4 animate-spin" fill="none">
@@ -319,10 +339,19 @@ export default function ContactForm() {
   );
 }
 
-function inputClass(hasError: boolean) {
-  return `min-h-11 w-full rounded-xl border bg-white/[0.03] px-4 py-2.5 text-white placeholder:text-white/30 outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/30 ${
-    hasError ? "border-danger" : "border-white/15"
-  }`;
+const controlSize = {
+  // identical fixed height for text inputs and the select
+  input: "h-11 px-4",
+  // native arrow removed so the select renders at the same height as inputs
+  select:
+    "select-chevron h-11 appearance-none pl-4 pr-10 [&>option]:bg-neutral-900",
+  textarea: "min-h-28 px-4 py-2.5 resize-y",
+};
+
+function inputClass(hasError: boolean, kind: keyof typeof controlSize = "input") {
+  return `block w-full rounded-xl border bg-white/[0.03] text-white placeholder:text-white/30 outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/30 ${
+    controlSize[kind]
+  } ${hasError ? "border-danger" : "border-white/15"}`;
 }
 
 function Field({
@@ -339,16 +368,15 @@ function Field({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col gap-1.5">
-      <label htmlFor={htmlFor} className="text-sm font-medium text-white/80">
+    <div className="flex flex-col justify-end">
+      <label htmlFor={htmlFor} className="mb-1.5 text-sm font-medium text-white/80">
         {label}
         {required && <span className="text-accent-text"> *</span>}
       </label>
       {children}
-      <div className="min-h-5">
-        {error && (
-          <ErrorMessage id={`${htmlFor}-error`}>{error}</ErrorMessage>
-        )}
+      {/* fixed slot for one line of error text so fields don't jump */}
+      <div className="mt-1 min-h-5">
+        {error && <ErrorMessage id={`${htmlFor}-error`}>{error}</ErrorMessage>}
       </div>
     </div>
   );

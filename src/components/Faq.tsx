@@ -6,7 +6,7 @@ const faqs = [
   },
   {
     question: "Jak dlouho vydrží keramická ochrana laku?",
-    answer: "Keramická ochrana laku vydrží 12 měsíců.",
+    answer: "Keramická ochrana laku vydrží až 3 roky při správné údržbě.",
   },
   {
     question: "Je nutné se předem objednat?",
