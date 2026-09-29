@@ -65,7 +65,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 
   return (
     <html lang="cs" className={`${manrope.variable} h-full antialiased`}>
-      <body className="flex min-h-full flex-col bg-neutral-950 pb-16 sm:pb-0">
+      <body className="flex min-h-full flex-col bg-neutral-950 pb-[calc(4.5rem+env(safe-area-inset-bottom))] sm:pb-0">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

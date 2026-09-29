@@ -57,7 +57,12 @@ export default function CookiesPage() {
           </li>
         </ul>
 
-        <div className="-mx-4 overflow-x-auto px-4 sm:mx-0 sm:px-0">
+        <div
+          className="-mx-4 overflow-x-auto px-4 sm:mx-0 sm:px-0"
+          role="region"
+          aria-label="Tabulka cookies (posouvejte vodorovně)"
+          tabIndex={0}
+        >
           <table className="w-full min-w-[40rem] border-collapse text-left text-sm">
             <caption className="sr-only">Přehled cookies a úložišť používaných na webu</caption>
             <thead>
@@ -72,7 +77,7 @@ export default function CookiesPage() {
             <tbody>
               {rows.map((row) => (
                 <tr key={row.name} className="border-b border-white/10 align-top">
-                  <td className="py-3 pr-4 font-mono text-xs text-white">{row.name}</td>
+                  <td className="py-3 pr-4 font-mono text-sm text-white">{row.name}</td>
                   <td className="py-3 pr-4">{row.category}</td>
                   <td className="py-3 pr-4">{row.provider}</td>
                   <td className="py-3 pr-4">{row.purpose}</td>

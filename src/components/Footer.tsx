@@ -3,14 +3,14 @@ import Link from "next/link";
 import { site } from "@/data/site";
 import CookieSettingsButton from "@/components/CookieSettingsButton";
 
-const linkClass = "transition hover:text-accent-text";
+const linkClass = "inline-flex min-h-11 items-center transition hover:text-accent-text";
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
     <footer className="border-t border-white/10 bg-black">
-      <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-8 text-sm text-white/50 sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-8 text-sm text-white/60 sm:px-6 lg:px-8">
         <Link href="/#top" className="self-center md:self-start">
           <Image
             src={site.logo.light}
@@ -32,7 +32,7 @@ export default function Footer() {
             </a>
           </p>
           <nav aria-label="Ceník a právní informace">
-            <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+            <ul className="flex flex-wrap items-center justify-center gap-x-5">
               <li>
                 <a href="/cenik" className={linkClass}>
                   Ceník
@@ -60,7 +60,7 @@ export default function Footer() {
           </nav>
         </div>
 
-        <div className="flex flex-col items-center gap-1 border-t border-white/5 pt-6 text-center text-xs text-white/40 sm:flex-row sm:justify-between sm:text-left">
+        <div className="flex flex-col items-center gap-1 border-t border-white/5 pt-6 text-center text-sm text-white/60 sm:flex-row sm:justify-between sm:text-left">
           <p>
             © {year} {site.name} — {site.owner}
           </p>

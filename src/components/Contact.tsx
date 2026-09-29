@@ -15,18 +15,18 @@ export default function Contact() {
           <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-5">
               <div>
-                <p className="text-sm font-medium uppercase tracking-wide text-white/40">Provozovna</p>
+                <p className="text-sm font-medium uppercase tracking-wide text-white/60">Provozovna</p>
                 <p className="mt-1 text-lg text-white">{site.address}</p>
               </div>
               <div>
-                <p className="text-sm font-medium uppercase tracking-wide text-white/40">Telefon</p>
-                <a href={site.phoneHref} className="mt-1 block text-lg text-white hover:text-accent-text">
+                <p className="text-sm font-medium uppercase tracking-wide text-white/60">Telefon</p>
+                <a href={site.phoneHref} className="inline-flex min-h-11 items-center text-lg text-white hover:text-accent-text">
                   {site.phone}
                 </a>
               </div>
               <div>
-                <p className="text-sm font-medium uppercase tracking-wide text-white/40">E-mail</p>
-                <a href={site.emailHref} className="mt-1 block text-lg text-white hover:text-accent-text">
+                <p className="text-sm font-medium uppercase tracking-wide text-white/60">E-mail</p>
+                <a href={site.emailHref} className="inline-flex min-h-11 items-center text-lg text-white hover:text-accent-text">
                   {site.email}
                 </a>
               </div>
@@ -34,7 +34,7 @@ export default function Contact() {
               <div className="flex flex-wrap gap-4">
                 <a
                   href={site.phoneHref}
-                  className="rounded-full bg-accent px-7 py-3 text-sm font-semibold text-white transition hover:bg-accent-hover"
+                  className="flex min-h-11 items-center rounded-full bg-accent px-7 py-3 text-sm font-semibold text-white transition hover:bg-accent-hover"
                 >
                   Zavolat
                 </a>
@@ -61,7 +61,7 @@ export default function Contact() {
           </p>
           <a
             href={`${site.emailHref}?subject=${encodeURIComponent("Dárkový poukaz")}`}
-            className="whitespace-nowrap rounded-full border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/5"
+            className="flex min-h-11 items-center whitespace-nowrap rounded-full border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/5"
           >
             Mám zájem o poukaz
           </a>

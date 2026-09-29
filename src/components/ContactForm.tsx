@@ -350,7 +350,7 @@ const controlSize = {
 };
 
 function inputClass(hasError: boolean, kind: keyof typeof controlSize = "input") {
-  return `block w-full rounded-xl border bg-white/[0.03] text-white placeholder:text-white/30 outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/30 ${
+  return `block w-full rounded-xl border bg-white/[0.03] text-base text-white placeholder:text-white/50 outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/30 ${
     controlSize[kind]
   } ${hasError ? "border-danger" : "border-white/15"}`;
 }

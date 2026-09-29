@@ -12,15 +12,25 @@ export default function ConsentMap() {
   // Both states share the same fixed height, so loading the map never shifts layout.
   if (consent?.externalMedia) {
     return (
-      <div className="overflow-hidden rounded-2xl border border-white/10">
-        <iframe
-          title={`Mapa — ${site.name}`}
-          src={mapsEmbedUrl}
-          className="h-80 w-full"
-          style={{ border: 0 }}
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        />
+      <div className="flex flex-col gap-3">
+        <div className="overflow-hidden rounded-2xl border border-white/10">
+          <iframe
+            title={`Mapa — ${site.name}`}
+            src={mapsEmbedUrl}
+            className="h-80 w-full"
+            style={{ border: 0 }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+        <a
+          href={mapsLinkUrl}
+          target="_blank"
+          rel="noopener"
+          className="inline-flex min-h-11 items-center self-start text-sm font-semibold text-white underline hover:text-accent-text"
+        >
+          Otevřít v Google Mapách
+        </a>
       </div>
     );
   }

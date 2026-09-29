@@ -172,7 +172,7 @@ function ConsentToggle({
       <div>
         <label htmlFor={id} className="text-sm font-semibold text-white">
           {title}
-          {disabled && <span className="ml-2 text-xs font-normal text-white/50">vždy zapnuto</span>}
+          {disabled && <span className="ml-2 text-sm font-normal text-white/60">vždy zapnuto</span>}
         </label>
         <p id={`${id}-description`} className="mt-1 text-sm leading-relaxed text-white/60">
           {description}

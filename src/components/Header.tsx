@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/data/site";
+import { navLinks } from "@/data/nav";
+import MobileMenu from "@/components/MobileMenu";
 
 export default function Header() {
   return (
@@ -18,24 +20,23 @@ export default function Header() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-8 text-sm font-medium text-white/70 sm:flex">
-          <Link href="/#sluzby" className="transition hover:text-accent-text">
-            Služby
-          </Link>
-          <Link href="/cenik" className="transition hover:text-accent-text">
-            Ceník
-          </Link>
-          <Link href="/#kontakt" className="transition hover:text-accent-text">
-            Kontakt
-          </Link>
+        <nav aria-label="Hlavní navigace" className="hidden items-center gap-8 text-sm font-medium text-white/70 sm:flex">
+          {navLinks.map((link) => (
+            <Link key={link.href} href={link.href} className="py-3 transition hover:text-accent-text">
+              {link.label}
+            </Link>
+          ))}
         </nav>
 
-        <a
-          href={site.phoneHref}
-          className="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-white transition hover:bg-accent-hover sm:px-5"
-        >
-          Zavolat
-        </a>
+        <div className="flex items-center gap-2">
+          <a
+            href={site.phoneHref}
+            className="flex min-h-11 items-center rounded-full bg-accent px-4 text-sm font-semibold text-white transition hover:bg-accent-hover sm:px-5"
+          >
+            Zavolat
+          </a>
+          <MobileMenu />
+        </div>
       </div>
     </header>
   );
