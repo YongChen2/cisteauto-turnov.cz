@@ -19,7 +19,7 @@ export default function ServiceCard({ service, onOpen }: ServiceCardProps) {
           alt={service.name}
           fill
           loading="lazy"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-cover transition duration-500 group-hover:scale-105"
         />
       </div>

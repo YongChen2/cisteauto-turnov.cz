@@ -25,7 +25,7 @@ export const services: Service[] = [
     shortDescription:
       "Kompletní vysátí, tepování sedadel a koberců a ošetření plastů — interiér jako z autosalonu.",
     description:
-      "Důkladné vysátí koberců i zavazadlového prostoru, tepování sedadel, dveřních výplní a koberců, omytí veškerých plastů a jejich ošetření antistatickým přípravkem, mytí oken zevnitř. Na přání doplníme o ozonové čištění klimatizace a interiéru (O3), které pomáhá odstranit pachy a zátěžové mikroorganismy. Příplatky za kůži, kombinaci látka/alcantara, silné znečištění nebo srst zvířat řešíme individuálně na místě.",
+      "Důkladné vysátí koberců i zavazadlového prostoru, tepování sedadel, dveřních výplní a koberců, omytí veškerých plastů a jejich ošetření antistatickým přípravkem, mytí oken zevnitř. Příplatky za kůži, kombinaci látka/alcantara, silné znečištění nebo srst zvířat řešíme individuálně na místě.",
     price: "od 2 000 Kč",
     // Dočasná titulní fotka, Unsplash, photo-1654522659761-b6ad370e0bb3 (autor: Vladyslav Lytvyshchenko),
     // https://unsplash.com/photos/A2etZFKGXA0 — nahradit kvalitní fotkou vlastní práce klienta.
@@ -123,6 +123,25 @@ export const services: Service[] = [
       { src: "/images/dekarbonizace-motoru/02.webp", temporary: true },
       { src: "/images/dekarbonizace-motoru/03.webp", temporary: true },
       { src: "/images/dekarbonizace-motoru/04.webp", temporary: true },
+    ],
+  },
+  {
+    slug: "cisteni-klimatizace-ozonem",
+    name: "Čištění klimatizace ozónem",
+    shortDescription:
+      "Ozón odstraní bakterie, plísně a nepříjemný zápach z klimatizace i celého interiéru.",
+    description:
+      "Ozónový generátor (O3) umístěný v uzavřeném voze prostoupí celý interiér i rozvody klimatizace. Ozón zničí bakterie, plísně a roztoče a odstraní zápach z kouření, zvířat nebo zatuchlé klimatizace — nejen ho překryje. Ošetření lze objednat samostatně nebo ke kompletnímu čištění interiéru.",
+    price: "300 Kč",
+    // Dočasné fotky, Unsplash (licence umožňuje komerční použití), nahradit fotkami z vlastní dílny:
+    // 1) photo-1542399204-b8dd4af5113d (autor: Olav Tvedt) — https://unsplash.com/photos/JJBxXvgnh5s
+    // 2) photo-1625723760245-9c712bd0e174 (autor: Matthias Speicher) — https://unsplash.com/photos/avD5j2iQcrA
+    // 3) photo-1752552055661-fbb9ef5398fe (autor: Obi, ořez na 3:2) — https://unsplash.com/photos/zEiv0-LGpRM
+    cover: { src: "/images/cisteni-klimatizace-ozonem/01.webp", temporary: true },
+    photos: [
+      { src: "/images/cisteni-klimatizace-ozonem/01.webp", temporary: true },
+      { src: "/images/cisteni-klimatizace-ozonem/02.webp", temporary: true },
+      { src: "/images/cisteni-klimatizace-ozonem/03.webp", temporary: true },
     ],
   },
 ];

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { services } from "@/data/services";
 import ServiceCard from "@/components/ServiceCard";
 import GalleryModal from "@/components/GalleryModal";
@@ -18,10 +19,19 @@ export default function ServicesSection() {
         </p>
       </div>
 
-      <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+      <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {services.map((service) => (
           <ServiceCard key={service.slug} service={service} onOpen={() => setOpenSlug(service.slug)} />
         ))}
+      </div>
+
+      <div className="mt-10 flex justify-center">
+        <Link
+          href="/cenik"
+          className="rounded-full border border-white/20 px-7 py-3 text-sm font-semibold text-white transition hover:border-accent hover:bg-accent-muted"
+        >
+          Kompletní ceník
+        </Link>
       </div>
 
       {openService && <GalleryModal service={openService} onClose={() => setOpenSlug(null)} />}

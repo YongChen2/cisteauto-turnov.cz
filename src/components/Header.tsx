@@ -13,6 +13,9 @@ export default function Header() {
           <Link href="/#sluzby" className="transition hover:text-accent-text">
             Služby
           </Link>
+          <Link href="/cenik" className="transition hover:text-accent-text">
+            Ceník
+          </Link>
           <Link href="/#kontakt" className="transition hover:text-accent-text">
             Kontakt
           </Link>

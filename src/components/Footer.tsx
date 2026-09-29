@@ -19,8 +19,13 @@ export default function Footer() {
               {site.email}
             </a>
           </p>
-          <nav aria-label="Právní informace">
+          <nav aria-label="Ceník a právní informace">
             <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+              <li>
+                <a href="/cenik" className={linkClass}>
+                  Ceník
+                </a>
+              </li>
               <li>
                 <a href="/obchodni-podminky" className={linkClass}>
                   Obchodní podmínky
