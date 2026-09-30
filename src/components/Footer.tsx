@@ -62,7 +62,7 @@ export default function Footer() {
 
         <div className="flex flex-col items-center gap-1 border-t border-white/5 pt-6 text-center text-sm text-white/60 sm:flex-row sm:justify-between sm:text-left">
           <p>
-            © {year} {site.name} — {site.owner}
+            © {year} {site.name} — {site.owner}, IČO: {site.ico}
           </p>
           <p>
             Created by{" "}

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { site } from "@/data/site";
-import LegalPage, { LegalSection, Todo, legalLinkClass } from "@/components/LegalPage";
+import LegalPage, { LegalSection, legalLinkClass } from "@/components/LegalPage";
 
 export const metadata: Metadata = {
   title: `Obchodní podmínky — ${site.name}`,
@@ -15,7 +15,7 @@ export default function TermsPage() {
       title="Obchodní podmínky"
       updated={
         <>
-          Účinné od <Todo>DATUM</Todo>
+          Účinné od 1. 10. 2026
         </>
       }
     >
@@ -26,7 +26,8 @@ export default function TermsPage() {
           ochrany laku, aplikace ochranné PPF fólie a dekarbonizace motoru.
         </p>
         <p>
-          Poskytovatelem je {site.owner}, se sídlem {site.address}, IČO: <Todo>IČO</Todo>, telefon{" "}
+          Poskytovatelem je {site.owner}, se sídlem {site.registeredAddress}, provozovna{" "}
+          {site.address}, IČO: {site.ico}, telefon{" "}
           {site.phone}, e-mail {site.email} (dále jen „poskytovatel“).
         </p>
         <p>
@@ -66,9 +67,6 @@ export default function TermsPage() {
       </LegalSection>
 
       <LegalSection title="5. Zrušení termínu">
-        <p>
-          Podmínky zrušení nebo přesunu potvrzeného termínu: <Todo>STORNO PODMÍNKY</Todo>
-        </p>
         <p>
           Zrušení nebo změnu termínu prosím oznamte co nejdříve telefonicky na čísle {site.phone}{" "}
           nebo e-mailem na {site.email}.
@@ -133,7 +131,7 @@ export default function TermsPage() {
 
       <LegalSection title="11. Závěrečná ustanovení">
         <p>
-          Tyto obchodní podmínky nabývají účinnosti dnem <Todo>DATUM</Todo>. Poskytovatel je
+          Tyto obchodní podmínky jsou platné a účinné od 1. 10. 2026. Poskytovatel je
           oprávněn podmínky měnit; pro konkrétní objednávku platí znění účinné v den potvrzení
           termínu.
         </p>

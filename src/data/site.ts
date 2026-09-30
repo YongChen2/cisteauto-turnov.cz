@@ -15,7 +15,11 @@ export const site = {
   phoneHref: "tel:+420702383702",
   email: "jirirejmont@email.cz",
   emailHref: "mailto:jirirejmont@email.cz",
+  /** provozovna (kontakt, mapa) */
   address: "Přepeře 227, 511 01 Turnov-Přepeře",
+  /** sídlo podle ARES */
+  registeredAddress: "Skokovy 36, 294 12 Žďár",
+  ico: "46512438",
   mapsQuery: "Přepeře 227, 511 01 Turnov-Přepeře",
   url: "https://www.cisteauto-turnov.cz",
 };

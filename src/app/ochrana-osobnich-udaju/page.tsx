@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { site } from "@/data/site";
-import LegalPage, { LegalSection, Todo, legalLinkClass } from "@/components/LegalPage";
+import LegalPage, { LegalSection, legalLinkClass } from "@/components/LegalPage";
 
 export const metadata: Metadata = {
   title: `Ochrana osobních údajů — ${site.name}`,
@@ -14,7 +14,8 @@ export default function PrivacyPage() {
       <LegalSection title="Správce osobních údajů">
         <p>
           Správcem osobních údajů zpracovávaných prostřednictvím tohoto webu je {site.owner}, se
-          sídlem {site.address}, IČO: <Todo>IČO</Todo> (dále jen „správce“). Správce lze kontaktovat
+          sídlem {site.registeredAddress}, provozovna {site.address}, IČO: {site.ico} (dále jen
+          „správce“). Správce lze kontaktovat
           telefonicky na čísle {site.phone} nebo e-mailem na {site.email}.
         </p>
       </LegalSection>
