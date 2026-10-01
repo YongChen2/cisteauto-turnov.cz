@@ -40,7 +40,7 @@ const ppf: PriceItem[] = [
   {
     name: "Celý předek",
     note: "kapota, světla, zrcátka, nárazník, blatníky",
-    price: "od 30 000 Kč",
+    price: "od 25 000 Kč",
   },
 ];
 

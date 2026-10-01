@@ -222,7 +222,7 @@ export const services: Service[] = [
     priceVariants: [
       { label: "Kapota", price: "od 8 000 Kč" },
       { label: "Kapota, světla, zrcátka", price: "10 000 Kč" },
-      { label: "Celý předek (kapota, světla, zrcátka, nárazník, blatníky)", price: "od 30 000 Kč" },
+      { label: "Celý předek (kapota, světla, zrcátka, nárazník, blatníky)", price: "od 25 000 Kč" },
     ],
     // Dočasné fotky (licence umožňuje komerční použití), jen čirá fólie, bez obličejů, nahradit
     // fotkami z vlastní dílny:
